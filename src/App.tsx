@@ -1,11 +1,11 @@
-// import viteLogo from "/vite.svg";
-
-{
-	/* <img src={viteLogo} className="logo" alt="Vite logo" /> */
-}
+import { Router } from "./Router";
 
 function App() {
-	return <>WELCOME TO NECTAR</>;
+	return (
+		<>
+			<Router />
+		</>
+	);
 }
 
 export default App;

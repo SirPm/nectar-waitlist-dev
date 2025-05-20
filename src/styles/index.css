@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Manrope", sans-serif;
+	background-image: url("/assets/bg.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@layer base {
+	:root {
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	html {
+		font-size: 100%; /* 1rem = 16px */
+	}
+
+	@media (max-width: 768px) {
+		html {
+			font-size: 87.5%; /* 1rem = 14px */
+		}
+	}
+}
+.app-container {
+	width: 100%;
+	max-width: 89.58%;
+	margin: auto;
+}
+
+.main-heading-top {
+	background: linear-gradient(
+		81.46deg,
+		#ffffff 47.67%,
+		#ffb580 78.24%,
+		#ff6b00 83.19%
+	);
+	font-weight: 700;
+	font-size: 3.375rem;
+	line-height: 4.5rem;
+	letter-spacing: -1.28px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
+.main-heading-bottom {
+	font-family: Manrope;
+	font-weight: 700;
+	font-size: 3.5rem;
+	line-height: 4rem;
+	letter-spacing: -1.28px;
+	background: linear-gradient(
+		84.08deg,
+		#ffffff 40.94%,
+		#ffb580 64.37%,
+		#fec398 64.37%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
+@media screen and (max-width: 1280px) {
+	.main-heading-top {
+		font-size: 2.7rem;
+		line-height: 3.5rem;
+	}
+
+	.main-heading-bottom {
+		font-size: 2.8rem;
+		line-height: 3rem;
+	}
+}
