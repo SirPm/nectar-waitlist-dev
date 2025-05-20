@@ -30,7 +30,7 @@ export const Footer = () => {
 	return (
 		<div className="pt-[20.4375rem] app-container">
 			<div className="flex flex-col gap-6 w-full max-w-[81%] mx-auto">
-				<div className="flex items-center justify-between">
+				<div className="flex flex-col md:flex-row gap-6 md:gap-0 items-center justify-between">
 					<p className="text-[#FFFFFF9C] text-sm leading-[1.1875rem]">
 						&copy; {new Date().getFullYear()} 2025 All Rights
 						Reserved

@@ -31,26 +31,29 @@ const FEATURES: {
 ];
 export const Features = () => {
 	return (
-		<div className="pt-[5.875rem] app-container">
+		<div
+			className="pt-[5.875rem] app-container"
+			id="features"
+		>
 			<div className="flex flex-col items-center gap-[1.5625rem] mx-auto">
 				<h2 className="text-white font-semibold text-[2.5rem] leading-[2.375rem] text-center">
 					Built By Bankers, For You.
 				</h2>
-				<p className="text-base font-medium text-[#E2E2E2] text-center w-full max-w-1/2">
+				<p className="text-base font-medium text-[#E2E2E2] text-center w-full md:max-w-1/2">
 					Designed to meet business needs by Bankers who understand
 					financial services in and out. A solution made to drive
 					successful businesses.
 				</p>
 			</div>
 			<div className="mt-[3.625rem]">
-				<div className="flex items-center flex-wrap gap-6 w-full max-w-[98.5rem] justify-center mx-auto">
+				<div className="flex flex-col lg:flex-row items-center flex-wrap gap-6 w-full max-w-[98.5rem] justify-center mx-auto">
 					{FEATURES.map(
 						({ imageSrc, title, text, isFullWidth }, idx) => (
 							<div
-								className={`bg-[#030303B2] rounded-[1.875rem] border border-[#FFFFFF1A] w-full h-[25.125rem] flex flex-col justify-between items-center ${
+								className={`bg-[#030303B2] rounded-[1.875rem] border border-[#FFFFFF1A] w-full min-h-[20rem] h-fit lg:h-[25.125rem] flex flex-col gap-[0.554375rem] lg:gap-0 justify-between items-center ${
 									isFullWidth
-										? "py-[2.125rem] px-[5.4375rem] max-w-[42.559375rem]"
-										: "py-[2.5rem] px-[1.8125rem] max-w-[31.94rem]"
+										? "py-[1.235625rem] lg:py-[2.125rem] px-[3.161875rem] lg:px-[5.4375rem] max-w-[30rem] lg:max-w-[42.559375rem]"
+										: "py-[1.235625rem] lg:py-[2.5rem] px-[3.161875rem] lg:px-[1.8125rem] max-w-[30rem] lg:max-w-[31.94rem]"
 								}`}
 								key={`${title}-${idx}`}
 							>
@@ -60,7 +63,7 @@ export const Features = () => {
 										alt={`${title}'s alt`}
 									/>
 								</div>
-								<div className="flex flex-col gap-2.5 items-center h-[5.03125rem]">
+								<div className="flex flex-col gap-2.5 items-center md:h-[5.03125rem]">
 									<h5 className="text-[1.125rem] leading-[1.59375rem] text-white font-semibold text-center">
 										{title}
 									</h5>

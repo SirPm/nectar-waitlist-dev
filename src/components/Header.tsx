@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const LINKS: { name: string; url: string }[] = [
-	{ name: "Features", url: "/features" },
-	{ name: "Contact us", url: "/contact" },
+	{ name: "Features", url: "#features" },
+	{ name: "Contact us", url: "#contactUs" },
 	{ name: "Blog", url: "/blog" },
 ];
 
@@ -59,21 +59,23 @@ export const Header = () => {
 					<>
 						<div className="flex items-center gap-8">
 							{LINKS.map((link, idx) => (
-								<Link
+								<a
 									key={idx}
-									to={link.url}
+									href={link.url}
 									className="text-white text-[0.95rem] leading-[1.15rem] font-normal"
 								>
 									{link.name}
-								</Link>
+								</a>
 							))}
 						</div>
-						<FilledWhiteBtn className="flex items-center gap-2">
-							<span className="text-black">
-								Join the Waitlist.
-							</span>
-							<img src="/assets/chevron-right.svg" />
-						</FilledWhiteBtn>
+						<a href="#contactUs">
+							<FilledWhiteBtn className="flex items-center gap-2">
+								<span className="text-black">
+									Join the Waitlist.
+								</span>
+								<img src="/assets/chevron-right.svg" />
+							</FilledWhiteBtn>
+						</a>
 					</>
 				)}
 			</div>
@@ -82,23 +84,25 @@ export const Header = () => {
 					<ol>
 						{LINKS.map((link, index) => (
 							<MobileNavItem key={index}>
-								<Link
-									to={link.url}
+								<a
+									href={link.url}
 									onClick={closeMenu}
 									className="text-white text-[0.95rem] leading-[1.15rem] font-normal"
 								>
 									{link.name}
-								</Link>
+								</a>
 							</MobileNavItem>
 						))}
 					</ol>
 					<MobileNavButton>
-						<FilledWhiteBtn className="flex items-center gap-2">
-							<span className="text-black">
-								Join the Waitlist.
-							</span>
-							<img src="/assets/chevron-right.svg" />
-						</FilledWhiteBtn>
+						<a href="#contactUs">
+							<FilledWhiteBtn className="flex items-center gap-2">
+								<span className="text-black">
+									Join the Waitlist.
+								</span>
+								<img src="/assets/chevron-right.svg" />
+							</FilledWhiteBtn>
+						</a>
 					</MobileNavButton>
 				</MobileNavLinks>
 			</MobileNav>

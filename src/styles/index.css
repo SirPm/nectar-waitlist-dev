@@ -81,3 +81,11 @@ body {
 		line-height: 3rem;
 	}
 }
+
+@media screen and (max-width: 1024px) {
+	.main-heading-top,
+	.main-heading-bottom {
+		font-size: 2.5rem;
+		line-height: 3.318125rem;
+	}
+}
