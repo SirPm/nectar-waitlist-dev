@@ -41,8 +41,7 @@ export const Footer = (props: IFooterProps) => {
 			<div className="flex flex-col gap-6 w-full max-w-[81%] mx-auto">
 				<div className="flex flex-col md:flex-row gap-6 md:gap-0 items-center justify-between">
 					<p className="text-[#FFFFFF9C] text-sm leading-[1.1875rem]">
-						&copy; {new Date().getFullYear()} 2025 All Rights
-						Reserved
+						&copy; {new Date().getFullYear()} All Rights Reserved
 					</p>
 					<div className="flex items-center gap-2.5">
 						{SOCIAL_MEDIA_LINKS.map(
