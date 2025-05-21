@@ -80,6 +80,12 @@ input:-webkit-autofill:active {
 	transition: background-color 5000s ease-in-out 0s;
 }
 
+input,
+select,
+textarea {
+	font-size: 16px !important;
+}
+
 @media screen and (max-width: 1280px) {
 	.main-heading-top {
 		font-size: 2.7rem;
