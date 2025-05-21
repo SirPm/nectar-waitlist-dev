@@ -34,7 +34,7 @@ const FEATURES: {
 		imageSrc1x: "/assets/ai-powered-insights-1x.png",
 		imageSrc2x: "/assets/ai-powered-insights-2x.png",
 		imageSrc3x: "/assets/ai-powered-insights-3x.png",
-		title: "AI Powered Business Insights",
+		title: "AI-Powered Business Insights",
 		text: "Get insights into your business performance with AI built in.",
 		isFullWidth: true,
 	},
