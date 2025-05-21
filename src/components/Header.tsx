@@ -47,10 +47,18 @@ export const Header = () => {
 						to="/"
 						onClick={handleScrollToTop}
 					>
-						<Logo
-							src="/assets/nectar-logo.svg"
-							alt="Logo"
-						/>
+						{isMobile ? (
+							<Logo
+								src="/assets/nectar-logo-1x.png"
+								srcSet="/assets/nectar-logo-2x.png 2x, /assets/nectar-logo-3x.png 3x"
+								alt="Nectar's Logo"
+							/>
+						) : (
+							<Logo
+								src="/assets/nectar-logo.svg"
+								alt="Nectar's Logo"
+							/>
+						)}
 					</Link>
 				</LogoWrapper>
 				{isMobile ? (
@@ -173,6 +181,7 @@ const LogoWrapper = styled.div`
 const Logo = styled.img`
 	width: 100%;
 	height: 100%;
+	object-fit: contain;
 `;
 
 // Mobile Navigation Components
