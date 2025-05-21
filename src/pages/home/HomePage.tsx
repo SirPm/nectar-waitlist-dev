@@ -25,14 +25,14 @@ export const HomePage = () => {
 	);
 };
 
-const FirstBgWrapper = styled.div`
+export const FirstBgWrapper = styled.div`
 	position: relative;
 	width: 100%;
 	min-height: 100dvh;
 
 	&::before {
 		content: "";
-		position: absolute;
+		position: fixed;
 		inset: 0;
 		background-image: url("/assets/bg.png");
 		background-size: cover;
@@ -40,7 +40,6 @@ const FirstBgWrapper = styled.div`
 		background-repeat: no-repeat;
 		transform: scaleY(-1);
 		z-index: -1;
-		top: -3rem;
 	}
 `;
 

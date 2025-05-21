@@ -16,7 +16,12 @@ const DEFAULT_FORM_DATA: IContactUsFormData = {
 	amount: "",
 	email: "",
 };
-export const ContactForm = () => {
+
+interface IContactFormProps {
+	handleSubmitForm: () => void;
+}
+export const ContactForm = (props: IContactFormProps) => {
+	const { handleSubmitForm } = props;
 	const [formData, setFormData] =
 		useState<IContactUsFormData>(DEFAULT_FORM_DATA);
 
@@ -110,6 +115,7 @@ export const ContactForm = () => {
 				<DynamicFilledWhiteBtn
 					disabled={isDisabled}
 					className="w-full"
+					onClick={isDisabled ? undefined : handleSubmitForm}
 				>
 					Submit
 				</DynamicFilledWhiteBtn>

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FilledWhiteBtn } from "./styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
@@ -13,6 +13,7 @@ const LINKS: { name: string; url: string }[] = [
 export const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const isMobile = useMediaQuery("(max-width: 768px)");
+	const { hash } = useLocation();
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -20,6 +21,10 @@ export const Header = () => {
 
 	const closeMenu = () => {
 		setIsMenuOpen(false);
+	};
+
+	const handleScrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	// Prevent scrolling when menu is open
@@ -38,7 +43,10 @@ export const Header = () => {
 		<Wrapper>
 			<div className="app-container flex items-center justify-between">
 				<LogoWrapper>
-					<Link to="/">
+					<Link
+						to="/"
+						onClick={handleScrollToTop}
+					>
 						<Logo
 							src="/assets/nectar-logo.svg"
 							alt="Logo"
@@ -58,15 +66,22 @@ export const Header = () => {
 				) : (
 					<>
 						<div className="flex items-center gap-8">
-							{LINKS.map((link, idx) => (
-								<a
-									key={idx}
-									href={link.url}
-									className="text-white text-[0.95rem] leading-[1.15rem] font-normal"
-								>
-									{link.name}
-								</a>
-							))}
+							{LINKS.map((link, idx) => {
+								const isActive = hash === link.url;
+								return (
+									<a
+										key={idx}
+										href={link.url}
+										className={`${
+											isActive
+												? "text-[#f5945c]"
+												: "text-white"
+										} text-[0.95rem] leading-[1.15rem] font-normal hover:text-[#f5945c]`}
+									>
+										{link.name}
+									</a>
+								);
+							})}
 						</div>
 						<a href="#contactUs">
 							<FilledWhiteBtn className="flex items-center gap-2">
@@ -82,17 +97,24 @@ export const Header = () => {
 			<MobileNav isOpen={isMenuOpen}>
 				<MobileNavLinks>
 					<ol>
-						{LINKS.map((link, index) => (
-							<MobileNavItem key={index}>
-								<a
-									href={link.url}
-									onClick={closeMenu}
-									className="text-white text-[0.95rem] leading-[1.15rem] font-normal"
-								>
-									{link.name}
-								</a>
-							</MobileNavItem>
-						))}
+						{LINKS.map((link, index) => {
+							const isActive = hash === link.url;
+							return (
+								<MobileNavItem key={index}>
+									<a
+										href={link.url}
+										onClick={closeMenu}
+										className={`${
+											isActive
+												? "text-[#f5945c]"
+												: "text-white"
+										} text-[0.95rem] leading-[1.15rem] font-normal hover:text-[#f5945c]`}
+									>
+										{link.name}
+									</a>
+								</MobileNavItem>
+							);
+						})}
 					</ol>
 					<MobileNavButton>
 						<a href="#contactUs">
@@ -117,7 +139,7 @@ export const Header = () => {
 };
 
 const Wrapper = styled.div`
-	background-color: #03030380;
+	background-color: #03030399;
 	height: 4.5625rem;
 	display: flex;
 	align-items: center;
@@ -201,5 +223,7 @@ const MenuBtn = styled.button`
 
 	@media screen and (max-width: 768px) {
 		display: block;
+		position: fixed;
+		right: 5.21%;
 	}
 `;

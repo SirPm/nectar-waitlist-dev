@@ -1,6 +1,16 @@
+import { useState } from "react";
 import { ContactForm } from "./ContactForm";
+import { ContactFormSuccessView } from "./ContactFormSuccessView";
 
 export const Contact = () => {
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
+	const handleSubmitForm = () => {
+		setIsSubmitted(true);
+		setTimeout(() => {
+			setIsSubmitted(false);
+		}, 5000);
+	};
 	return (
 		<div
 			className="pt-[13.4375rem] app-container"
@@ -20,7 +30,11 @@ export const Contact = () => {
 					</p>
 				</div>
 				<div className="w-full max-w-[27.375rem] mx-auto bg-[#FFFFFF1A] border border-[#FFEBEB45] rounded-4xl p-6">
-					<ContactForm />
+					{isSubmitted ? (
+						<ContactFormSuccessView />
+					) : (
+						<ContactForm handleSubmitForm={handleSubmitForm} />
+					)}
 				</div>
 			</div>
 		</div>

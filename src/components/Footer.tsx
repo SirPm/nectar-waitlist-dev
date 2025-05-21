@@ -26,9 +26,18 @@ const SOCIAL_MEDIA_LINKS: {
 		name: "YouTube",
 	},
 ];
-export const Footer = () => {
+
+interface IFooterProps {
+	footerContainerClassName?: string;
+}
+export const Footer = (props: IFooterProps) => {
+	const { footerContainerClassName } = props;
 	return (
-		<div className="pt-[20.4375rem] app-container">
+		<div
+			className={`pt-[20.4375rem] app-container ${
+				footerContainerClassName || ""
+			}`}
+		>
 			<div className="flex flex-col gap-6 w-full max-w-[81%] mx-auto">
 				<div className="flex flex-col md:flex-row gap-6 md:gap-0 items-center justify-between">
 					<p className="text-[#FFFFFF9C] text-sm leading-[1.1875rem]">
