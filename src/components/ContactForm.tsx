@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import { DynamicFilledWhiteBtn } from "./styled";
 import styled from "@emotion/styled";
-import { formatAmount } from "../utils/amount";
+import { convertFormattedAmtToNum, formatAmount } from "../utils/amount";
 
-interface IContactUsFormData {
+export interface IContactUsFormData {
 	businessName: string;
 	description: string;
 	amount: string;
@@ -18,10 +18,11 @@ const DEFAULT_FORM_DATA: IContactUsFormData = {
 };
 
 interface IContactFormProps {
-	handleSubmitForm: () => void;
+	handleSubmitForm: (formData: IContactUsFormData) => Promise<void>;
+	isLoading: boolean;
 }
 export const ContactForm = (props: IContactFormProps) => {
-	const { handleSubmitForm } = props;
+	const { handleSubmitForm, isLoading } = props;
 	const [formData, setFormData] =
 		useState<IContactUsFormData>(DEFAULT_FORM_DATA);
 
@@ -56,6 +57,13 @@ export const ContactForm = (props: IContactFormProps) => {
 		});
 	};
 
+	const handleSubmit = () => {
+		handleSubmitForm({
+			...formData,
+			amount: String(convertFormattedAmtToNum(formData.amount)),
+		});
+	};
+
 	return (
 		<div className="w-full flex flex-col gap-8">
 			<div className="flex flex-col gap-4">
@@ -70,6 +78,7 @@ export const ContactForm = (props: IContactFormProps) => {
 						placeholder="Enter your business name"
 						onChange={handleInputChange}
 						value={formData.businessName}
+						disabled={isLoading}
 					/>
 				</InputWrapper>
 				<InputWrapper>
@@ -82,6 +91,7 @@ export const ContactForm = (props: IContactFormProps) => {
 						placeholder="Provide a short description of your business"
 						onChange={handleInputChange}
 						value={formData.description}
+						disabled={isLoading}
 					/>
 				</InputWrapper>
 				<InputWrapper>
@@ -95,6 +105,7 @@ export const ContactForm = (props: IContactFormProps) => {
 						placeholder="₦0.00"
 						onChange={handleAmountChange}
 						value={formData.amount}
+						disabled={isLoading}
 					/>
 				</InputWrapper>
 				<InputWrapper>
@@ -108,16 +119,17 @@ export const ContactForm = (props: IContactFormProps) => {
 						placeholder="Enter your email address"
 						onChange={handleInputChange}
 						value={formData.email}
+						disabled={isLoading}
 					/>
 				</InputWrapper>
 			</div>
 			<div className="w-full">
 				<DynamicFilledWhiteBtn
-					disabled={isDisabled}
+					disabled={isDisabled || isLoading}
 					className="w-full"
-					onClick={isDisabled ? undefined : handleSubmitForm}
+					onClick={isDisabled ? undefined : handleSubmit}
 				>
-					Submit
+					{isLoading ? "Submitting..." : "Submit"}
 				</DynamicFilledWhiteBtn>
 			</div>
 		</div>

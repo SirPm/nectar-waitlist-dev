@@ -17,5 +17,5 @@ export const formatAmount = (amount: string): string => {
 };
 
 export const convertFormattedAmtToNum = (amount: string): number => {
-	return Number(amount?.split(",").join(""));
+	return Number(amount?.replace("₦", "")?.split(",").join(""));
 };

@@ -7,7 +7,7 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 const LINKS: { name: string; url: string }[] = [
 	{ name: "Features", url: "#features" },
 	{ name: "Contact us", url: "#contactUs" },
-	{ name: "Blog", url: "/blog" },
+	{ name: "Blog", url: "https://nectarng.substack.com" },
 ];
 
 export const Header = () => {
@@ -77,6 +77,14 @@ export const Header = () => {
 												? "text-[#f5945c]"
 												: "text-white"
 										} text-[0.95rem] leading-[1.15rem] font-normal hover:text-[#f5945c]`}
+										target={
+											link.name === "Blog" ? "_blank" : ""
+										}
+										rel={`${
+											link.name === "Blog"
+												? "noopener noreferrer"
+												: ""
+										}`}
 									>
 										{link.name}
 									</a>
@@ -109,6 +117,14 @@ export const Header = () => {
 												? "text-[#f5945c]"
 												: "text-white"
 										} text-[0.95rem] leading-[1.15rem] font-normal hover:text-[#f5945c]`}
+										target={
+											link.name === "Blog" ? "_blank" : ""
+										}
+										rel={`${
+											link.name === "Blog"
+												? "noopener noreferrer"
+												: ""
+										}`}
 									>
 										{link.name}
 									</a>

@@ -1,16 +1,42 @@
 import { useState } from "react";
-import { ContactForm } from "./ContactForm";
+import { ContactForm, type IContactUsFormData } from "./ContactForm";
 import { ContactFormSuccessView } from "./ContactFormSuccessView";
 
 export const Contact = () => {
 	const [isSubmitted, setIsSubmitted] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
-	const handleSubmitForm = () => {
-		setIsSubmitted(true);
-		setTimeout(() => {
-			setIsSubmitted(false);
-		}, 5000);
+	const handleSubmitForm = async (formData: IContactUsFormData) => {
+		setIsLoading(true);
+		const formdata = new FormData();
+		formdata.append("Business Name", formData.businessName);
+		formdata.append("Nature of Business", formData.description);
+		formdata.append("Average Loan Amount", formData.amount);
+		formdata.append("Email Address", formData.email);
+
+		const requestOptions: RequestInit = {
+			method: "POST",
+			body: formdata,
+			redirect: "follow" as RequestRedirect,
+		};
+
+		try {
+			const resp = await fetch(
+				"https://script.google.com/macros/s/AKfycbzLv1Dv1e_C451jguocS05MtLt4YkfzfSNZ5hZwsWr-IAcH0gG1_tbr_rrc6HH6_DoHbA/exec",
+				requestOptions
+			);
+			await resp.json();
+			setIsLoading(false);
+			setIsSubmitted(true);
+			setTimeout(() => {
+				setIsSubmitted(false);
+			}, 5000);
+		} catch (error) {
+			console.error(error);
+			setIsLoading(false);
+		}
 	};
+
 	return (
 		<div
 			className="pt-[13.4375rem] app-container"
@@ -33,7 +59,10 @@ export const Contact = () => {
 					{isSubmitted ? (
 						<ContactFormSuccessView />
 					) : (
-						<ContactForm handleSubmitForm={handleSubmitForm} />
+						<ContactForm
+							handleSubmitForm={handleSubmitForm}
+							isLoading={isLoading}
+						/>
 					)}
 				</div>
 			</div>
