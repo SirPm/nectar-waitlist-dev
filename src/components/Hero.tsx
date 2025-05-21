@@ -33,8 +33,9 @@ export const Hero = () => {
 				</div>
 				<div className="sm:w-[504px] sm:h-[666px] shrink-0">
 					<img
-						className="w-full h-full"
-						src="/assets/phones.svg"
+						className="w-full h-full object-contain"
+						src="/assets/phones-1x.png"
+						srcSet="/assets/phones-2x.png 2x, /assets/phones-3x.png 3x"
 						alt="two black phones"
 					/>
 				</div>
