@@ -5,7 +5,6 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Manrope", sans-serif;
-	background: linear-gradient(to right, #ff6908 0%, #ff6908 100%);
 }
 
 @layer base {

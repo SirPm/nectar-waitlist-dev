@@ -28,7 +28,6 @@ export const HomePage = () => {
 export const FirstBgWrapper = styled.div`
 	position: relative;
 	width: 100%;
-	min-height: 100dvh;
 
 	&::before {
 		content: "";
@@ -46,7 +45,6 @@ export const FirstBgWrapper = styled.div`
 const SecondBgWrapper = styled.div<{ $isinView: boolean }>`
 	position: relative;
 	width: 100%;
-	height: 100dvh;
 
 	&::before {
 		content: "";
