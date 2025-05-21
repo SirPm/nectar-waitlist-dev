@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { DynamicFilledWhiteBtn } from "./styled";
 import styled from "@emotion/styled";
 import { convertFormattedAmtToNum, formatAmount } from "../utils/amount";
+import { REGEX_VALUES } from "../utils/regex";
 
 export interface IContactUsFormData {
 	businessName: string;
@@ -28,10 +29,10 @@ export const ContactForm = (props: IContactFormProps) => {
 
 	const isDisabled = useMemo(() => {
 		return (
-			!formData.businessName ||
-			!formData.description ||
+			formData.businessName.length < 3 ||
+			formData.description.length < 5 ||
 			!formData.amount ||
-			!formData.email
+			!REGEX_VALUES.EMAIL.test(formData.email)
 		);
 	}, [formData]);
 
