@@ -5,10 +5,7 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Manrope", sans-serif;
-	background-image: url("/assets/bg.png");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	background: linear-gradient(to right, #ff6908 0%, #ff6908 100%);
 }
 
 @layer base {

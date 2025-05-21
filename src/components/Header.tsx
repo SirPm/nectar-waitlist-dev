@@ -85,7 +85,7 @@ export const Header = () => {
 						</div>
 						<a href="#contactUs">
 							<FilledWhiteBtn className="flex items-center gap-2">
-								<span className="text-black">
+								<span className="text-black font-medium">
 									Join the Waitlist.
 								</span>
 								<img src="/assets/chevron-right.svg" />
@@ -119,7 +119,7 @@ export const Header = () => {
 					<MobileNavButton>
 						<a href="#contactUs">
 							<FilledWhiteBtn className="flex items-center gap-2">
-								<span className="text-black">
+								<span className="text-black font-medium">
 									Join the Waitlist.
 								</span>
 								<img src="/assets/chevron-right.svg" />
@@ -225,5 +225,6 @@ const MenuBtn = styled.button`
 		display: block;
 		position: fixed;
 		right: 5.21%;
+		z-index: 25;
 	}
 `;
