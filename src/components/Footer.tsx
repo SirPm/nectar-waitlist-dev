@@ -7,12 +7,12 @@ const SOCIAL_MEDIA_LINKS: {
 }[] = [
 	{
 		iconSrc: "/assets/twitter.svg",
-		url: "#",
+		url: "https://x.com/trynectar?s=21&t=z5xo2zd_apJcmCeshvaAyw",
 		name: "Twitter",
 	},
 	{
 		iconSrc: "/assets/instagram.svg",
-		url: "#",
+		url: "https://www.instagram.com/try.nectarng?igsh=b2Q2dmFtYWhwcGpz&utm_source=qr",
 		name: "Instagram",
 	},
 	{
@@ -22,7 +22,7 @@ const SOCIAL_MEDIA_LINKS: {
 	},
 	{
 		iconSrc: "/assets/youtube.svg",
-		url: "#",
+		url: "https://youtube.com/@nectarng?feature=shared",
 		name: "YouTube",
 	},
 ];
