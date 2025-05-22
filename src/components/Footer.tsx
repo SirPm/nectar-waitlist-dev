@@ -17,7 +17,7 @@ const SOCIAL_MEDIA_LINKS: {
 	},
 	{
 		iconSrc: "/assets/linkedin.svg",
-		url: "#",
+		url: "https://www.linkedin.com/company/nectarng",
 		name: "LinkedIn",
 	},
 	{
