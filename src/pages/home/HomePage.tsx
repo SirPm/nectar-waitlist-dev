@@ -33,11 +33,10 @@ export const FirstBgWrapper = styled.div`
 		content: "";
 		position: fixed;
 		inset: 0;
-		background-image: url("/assets/bg.png");
+		background-image: url("/assets/bg.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		transform: scaleY(-1);
 		z-index: -1;
 	}
 `;
@@ -52,10 +51,11 @@ const SecondBgWrapper = styled.div<{ $isinView: boolean }>`
 		opacity: ${({ $isinView }) => ($isinView ? 1 : 0)};
 		transition: opacity 0.5s ease;
 		inset: 0;
-		background-image: url("/assets/bg.png");
+		background-image: url("/assets/bg.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		transform: scaleY(-1);
 		z-index: -1;
 	}
 `;
