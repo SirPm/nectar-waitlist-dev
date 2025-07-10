@@ -8,10 +8,10 @@ export const Hero = () => {
 					<div className="flex flex-col gap-4 items-center lg:[align-items:unset]">
 						<div className="flex flex-col items-center lg:[align-items:unset]">
 							<h2 className="main-heading-top text-center lg:text-left">
-								Intelligent Banking.
+								Banking Built For Business.
 							</h2>
 							<h2 className="main-heading-bottom text-center lg:text-left">
-								Good Business.
+								Backed By Intelligence.
 							</h2>
 						</div>
 						<p className="text-[0.9375rem] xl:text-base text-[#E2E2E2] text-center lg:text-left max-w-[23rem] lg:max-w-fit w-full">

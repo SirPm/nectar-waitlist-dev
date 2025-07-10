@@ -46,13 +46,12 @@ export const Features = () => {
 			id="features"
 		>
 			<div className="flex flex-col items-center gap-[1.5625rem] mx-auto">
-				<h2 className="text-white font-semibold text-[2.5rem] leading-[2.375rem] text-center">
-					Built By Bankers, For You.
+				<h2 className="text-white font-semibold text-[2.5rem] leading-[3rem] text-center w-full md:max-w-[45rem]">
+					Accelerate Business Growth Through Intelligent Banking.
 				</h2>
 				<p className="text-base font-medium text-[#E2E2E2] text-center w-full md:max-w-1/2">
-					Designed to meet business needs by Bankers who understand
-					financial services in and out. A solution made to drive
-					successful businesses.
+					Get everything you need to advance your business, enhanced
+					by intelligent technology.
 				</p>
 			</div>
 			<div className="mt-[3.625rem]">
