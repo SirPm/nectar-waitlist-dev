@@ -1,0 +1,21 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|webp|mp4|mov|avi|m4a|mp3|ogg|txt|pdf))",
+            "destination": "/$1",
+            "permanent": false
+        },
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "x-vercel-maintenance",
+                    "value": "on"
+                }
+            ],
+            "destination": "/maintenance.html",
+            "permanent": false
+        }
+    ]
+}
