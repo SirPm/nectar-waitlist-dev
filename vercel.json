@@ -1,12 +1,15 @@
 {
-    "redirects": [
+    "routes": [
         {
-            "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|webp|mp4|mov|avi|m4a|mp3|ogg|txt|pdf))",
-            "destination": "/$1",
-            "permanent": false
+            "src": "/maintenance.html",
+            "dest": "/maintenance.html"
         },
         {
-            "source": "/(.*)",
+            "src": "/(.*\\.(?:js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|webp|mp4|mov|avi|m4a|mp3|ogg|txt|pdf))",
+            "dest": "/$1"
+        },
+        {
+            "src": "/(.*)",
             "has": [
                 {
                     "type": "header",
@@ -14,8 +17,7 @@
                     "value": "on"
                 }
             ],
-            "destination": "/maintenance.html",
-            "permanent": false
+            "dest": "/maintenance.html"
         }
     ]
 }
