@@ -102,7 +102,7 @@ export const Header = () => {
 						<a href="#contactUs">
 							<FilledWhiteBtn className="flex items-center gap-2">
 								<span className="text-black font-medium">
-									Join the Waitlist.
+									Join the Waitlist Now.
 								</span>
 								<img src="/assets/chevron-right.svg" />
 							</FilledWhiteBtn>
