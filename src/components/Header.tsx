@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
-import { FilledWhiteBtn } from "./styled";
+import { FilledOrangeBtn, FilledWhiteBtn } from "./styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const LINKS: { name: string; url: string }[] = [
-	{ name: "Features", url: "#features" },
-	{ name: "Contact us", url: "#contactUs" },
-	{ name: "Blog", url: "https://nectarng.substack.com" },
+	{ name: "Products", url: "#features" },
+	{ name: "About", url: "#contactUs" },
+	// { name: "Blog", url: "https://nectarng.substack.com" },
+	{ name: "Why Us?", url: "#contactUs" },
+	{ name: "FAQs", url: "#contactUs" },
 ];
 
 export const Header = () => {
@@ -49,13 +51,14 @@ export const Header = () => {
 					>
 						{isMobile ? (
 							<Logo
-								src="/assets/nectar-logo-1x.png"
-								srcSet="/assets/nectar-logo-2x.png 2x, /assets/nectar-logo-3x.png 3x"
+								src="/assets/nectar-logo-v2.svg"
+								// src="/assets/nectar-logo-1x.png"
+								// srcSet="/assets/nectar-logo-2x.png 2x, /assets/nectar-logo-3x.png 3x"
 								alt="Nectar's Logo"
 							/>
 						) : (
 							<Logo
-								src="/assets/nectar-logo.svg"
+								src="/assets/nectar-logo-v2.svg"
 								alt="Nectar's Logo"
 							/>
 						)}
@@ -73,7 +76,7 @@ export const Header = () => {
 					</MenuBtn>
 				) : (
 					<>
-						<div className="flex items-center gap-8">
+						<div className="flex items-center gap-10 bg-[#FFFFFF1F] py-3 px-6 h-11.5 rounded-[6.25rem]">
 							{LINKS.map((link, idx) => {
 								const isActive = hash === link.url;
 								return (
@@ -84,7 +87,7 @@ export const Header = () => {
 											isActive
 												? "text-[#f5945c]"
 												: "text-white"
-										} text-[0.95rem] leading-[1.15rem] font-normal hover:text-[#f5945c]`}
+										} text-base leading-[1.15rem] font-normal hover:text-[#f5945c]`}
 										target={
 											link.name === "Blog" ? "_blank" : ""
 										}
@@ -100,12 +103,9 @@ export const Header = () => {
 							})}
 						</div>
 						<a href="#contactUs">
-							<FilledWhiteBtn className="flex items-center gap-2">
-								<span className="text-black font-medium">
-									Join the Waitlist Now.
-								</span>
-								<img src="/assets/chevron-right.svg" />
-							</FilledWhiteBtn>
+							<FilledOrangeBtn className="flex items-center gap-2">
+								Join Waitlist
+							</FilledOrangeBtn>
 						</a>
 					</>
 				)}
@@ -163,13 +163,14 @@ export const Header = () => {
 };
 
 const Wrapper = styled.div`
-	background-color: #03030399;
-	height: 4.5625rem;
+	// background-color: #03030399;
+	// height: 4.5625rem;
 	display: flex;
 	align-items: center;
-	position: fixed;
+	// position: fixed;
 	width: 100%;
-	top: 0;
+	// top: 0;
+	padding-top: 3.625rem;
 	z-index: 100;
 `;
 
