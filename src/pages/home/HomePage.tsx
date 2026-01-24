@@ -5,6 +5,7 @@ import { EverythingYouNeedToThrive } from "../../components/everything-you-need-
 import { IntelligentSolutions } from "../../components/IntelligentSolutions";
 import { WhyShouldYouUseNectar } from "../../components/WhyShouldYouUseNectar";
 import { Testimonials } from "../../components/Testimonials";
+import { EverythingYouNeedToKnow } from "../../components/EverythingYouNeedToKnow";
 
 export const HomePage = () => {
 	return (
@@ -18,6 +19,7 @@ export const HomePage = () => {
 				<IntelligentSolutions />
 				<WhyShouldYouUseNectar />
 				<Testimonials />
+				<EverythingYouNeedToKnow />
 			</div>
 		</div>
 	);
