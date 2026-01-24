@@ -31,6 +31,15 @@ body {
 		}
 	}
 }
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
 .app-container {
 	width: 100%;
 	max-width: 89.58%;
@@ -102,6 +111,15 @@ input[type="number"] {
 	-webkit-appearance: textfield;
 	-moz-appearance: textfield;
 	appearance: textfield;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 @media screen and (max-width: 1280px) {
