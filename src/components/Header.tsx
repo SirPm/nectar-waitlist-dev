@@ -241,11 +241,13 @@ const Overlay = styled("div")<{ isOpen: boolean }>`
 
 const MenuBtn = styled.button`
 	display: none;
-	width: 24px;
-	height: 24px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
-	background-color: transparent;
+	background-color: #E65713;
 	border: none;
+	border-radius: 50%;
+	padding: 8px;
 
 	@media screen and (max-width: 768px) {
 		display: block;

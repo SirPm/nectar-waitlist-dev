@@ -4,12 +4,12 @@ export const HeaderContent = () => {
 	return (
 		<div className="h-[calc(100vh_-_173px)] flex justify-center items-center relative z-10">
 			<div className="text-white w-full max-w-[90%] sm:max-w-[70%] md:max-w-[50%] lg:max-w-[60%] xl:max-w-[50%] mx-auto flex flex-col gap-2 lg:gap-6">
-				<h1 className="font-bold text-2xl lg:text-[4.5rem] text-center lg:leading-18">
+				<h1 className="font-bold text-2xl sm:text-5xl lg:text-[4.5rem] text-center lg:leading-18">
 					Hello Business,
 					<br className="hidden lg:block" />
 					Meet Growth
 				</h1>
-				<p className="text-base lg:text-xl font-medium text-center">
+				<p className="text-base sm:text-[18px] lg:text-xl font-medium text-center">
 					Modern business banking tools with AI, designed to
 					<br className="hidden lg:block" />
 					grow your business from day one

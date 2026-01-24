@@ -6,6 +6,8 @@ import { IntelligentSolutions } from "../../components/IntelligentSolutions";
 import { WhyShouldYouUseNectar } from "../../components/WhyShouldYouUseNectar";
 import { Testimonials } from "../../components/Testimonials";
 import { EverythingYouNeedToKnow } from "../../components/EverythingYouNeedToKnow";
+import { GetNotified } from "../../components/GetNotified";
+import { FooterV2 } from "../../components/FooterV2";
 
 export const HomePage = () => {
 	return (
@@ -20,6 +22,8 @@ export const HomePage = () => {
 				<WhyShouldYouUseNectar />
 				<Testimonials />
 				<EverythingYouNeedToKnow />
+				<GetNotified />
+				<FooterV2 />
 			</div>
 		</div>
 	);
