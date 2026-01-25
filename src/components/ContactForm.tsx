@@ -61,7 +61,7 @@ export const ContactForm = (props: IContactFormProps) => {
 	const handleSubmit = () => {
 		handleSubmitForm({
 			...formData,
-			amount: String(convertFormattedAmtToNum(formData.amount)),
+			amount: String(convertFormattedAmtToNum(formData.amount))
 		});
 	};
 
