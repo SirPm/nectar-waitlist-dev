@@ -37,7 +37,7 @@ export const ContactForm = (props: IContactFormProps) => {
 	}, [formData]);
 
 	const handleInputChange = (
-		evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+		evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
 		const { name, value } = evt.target;
 		setFormData({
@@ -61,7 +61,7 @@ export const ContactForm = (props: IContactFormProps) => {
 	const handleSubmit = () => {
 		handleSubmitForm({
 			...formData,
-			amount: String(convertFormattedAmtToNum(formData.amount))
+			amount: String(convertFormattedAmtToNum(formData.amount)),
 		});
 	};
 
