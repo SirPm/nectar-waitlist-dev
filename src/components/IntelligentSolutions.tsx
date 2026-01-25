@@ -5,7 +5,10 @@ export const IntelligentSolutions = () => {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 
 	return (
-		<div className="my-[7.5rem] flex flex-col gap-[6rem] px-10 md:px-0">
+		<div
+			className="my-[7.5rem] flex flex-col gap-[6rem] px-10 md:px-0 scroll-mt-5"
+			id="about"
+		>
 			<div className="px-10 md:pl-[7.75rem] md:pr-[7.375rem]">
 				<div className="flex flex-col gap-12">
 					<div className="flex items-center gap-8 flex-col lg:flex-row">

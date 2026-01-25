@@ -20,7 +20,10 @@ const THINGS_YOU_NEED_TO_THRIVE: IThingsYouNeedToThrive[] = [
 
 export const EverythingYouNeedToThrive = () => {
 	return (
-		<div className="my-[7.5rem] px-10 md:pl-[7.5625rem] md:pr-[7.4375rem]">
+		<div
+			className="my-[7.5rem] px-10 md:pl-[7.5625rem] md:pr-[7.4375rem] scroll-mt-5"
+			id="products"
+		>
 			<div className="flex flex-col gap-[6rem]">
 				<div className="flex flex-col gap-8 items-center">
 					<h3 className="text-[#1C0000] font-semibold text-2xl lg:text-[4.5rem] text-center lg:leading-18">

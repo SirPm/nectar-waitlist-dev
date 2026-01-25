@@ -1,6 +1,6 @@
 export const WhyShouldYouUseNectar = () => {
 	return (
-		<div>
+		<div id="whyUs">
 			<img
 				src="/assets/why-use-image.png"
 				alt=""

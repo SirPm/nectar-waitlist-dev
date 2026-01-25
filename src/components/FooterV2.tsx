@@ -89,15 +89,15 @@ export const FooterV2 = () => {
 							items={[
 								{
 									label: "About",
-									href: "#",
+									href: "#about",
 								},
 								{
 									label: "Why Us?",
-									href: "#",
+									href: "#whyUs",
 								},
 								{
 									label: "FAQs",
-									href: "#",
+									href: "#faq",
 								},
 							]}
 						/>

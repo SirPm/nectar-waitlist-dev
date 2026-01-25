@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const LINKS: { name: string; url: string }[] = [
-	{ name: "Products", url: "#features" },
-	{ name: "About", url: "#contactUs" },
+	{ name: "Products", url: "#products" },
+	{ name: "About", url: "#about" },
 	// { name: "Blog", url: "https://nectarng.substack.com" },
-	{ name: "Why Us?", url: "#contactUs" },
-	{ name: "FAQs", url: "#contactUs" },
+	{ name: "Why Us?", url: "#whyUs" },
+	{ name: "FAQs", url: "#faq" },
 ];
 
 export const Header = () => {
