@@ -16,37 +16,23 @@ const testimonials: Testimonial[] = [
 	{
 		id: 1,
 		name: "Tamara Posibi",
-		title: "CEO, Rise Business",
-		quote: '"I love how Nectar incorporates both business management and my everyday payments in one app. The bookkeeping is great too!"',
-		image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+		title: "CEO, Irtus Business",
+		quote: "“I love how Nectar incorporates both business management and my everyday payments in one app. The bookkeeping is great too!”",
+		image: "/assets/tamara-posibi.png",
 	},
 	{
 		id: 2,
 		name: "David Adeleke",
 		title: "Founder, Communique",
-		quote: '"I get access to loans if I ever need it, monthly reports on how and where we\'re spending, and areas for improvement. This is my favourite financial services app."',
-		image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+		quote: "“I get access to loans if I ever need it, monthly reports on how and where we’re spending, and areas for improvement. This is my favourite financial services app.”",
+		image: "/assets/david-adeleke.png",
 	},
 	{
 		id: 3,
 		name: "Victoria Ene Okere",
-		title: "CEO, Safest Productions",
-		quote: '"The daily interest on our balances alone has covered many operational costs this quarter. I\'m going to be on this app for a long time."',
-		image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-	},
-	{
-		id: 4,
-		name: "John Smith",
-		title: "CEO, Tech Innovations",
-		quote: '"This platform has transformed how we manage our finances. The insights are invaluable."',
-		image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-	},
-	{
-		id: 5,
-		name: "Sarah Johnson",
-		title: "Founder, Creative Studios",
-		quote: '"Best financial tool I\'ve used for my business. Highly recommend it to all entrepreneurs."',
-		image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+		title: "CEO, Slate94 Productions",
+		quote: "“The daily interest on our balances alone has covered many operational costs this quarter. I’m going to be on this app for a long time.”",
+		image: "/assets/victoria-okere.png",
 	},
 ];
 
@@ -133,7 +119,8 @@ export const TestimonialsSection: React.FC = () => {
 						Trusted by&nbsp;
 						<span className="text-[#E65713]">Entrepreneurs</span>
 						&nbsp;
-						<br className="hidden xs:block" /> building real businesses.
+						<br className="hidden xs:block" /> building real
+						businesses.
 					</h2>
 
 					<div className="relative bg-[#FAFAFA] h-14 rounded-[1.25rem] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314]">
