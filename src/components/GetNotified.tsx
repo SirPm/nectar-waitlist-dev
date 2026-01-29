@@ -61,8 +61,8 @@ export const GetNotified = () => {
 	};
 
 	return (
-		<div className="mt-[125px] md:mx-[122px] mx-10 flex flex-col gap-[145px]">
-			<div className="flex flex-col gap-[39px]">
+		<div className="mt-[125px] flex flex-col gap-[145px]">
+			<div className="flex flex-col gap-[39px] md:mx-[122px] mx-10">
 				<div className="flex flex-col gap-[25px]">
 					<h3 className="font-semibold md:text-7xl text-5xl text-[#E65713] text-center">
 						Get Notified When <br className="hidden md:block" /> We
@@ -163,13 +163,43 @@ export const GetNotified = () => {
 					</FilledOrangeBtn>
 				</div>
 			</div>
-			{/* <WaitlistHero /> */}
-			<div>
+			<div className="relative envelope-section">
 				<img
 					src="/assets/envelope.svg"
 					alt=""
-					className="w-[70%] mx-auto"
+					className="w-full max-w-full xl:max-w-[80%] mx-auto"
 				/>
+				<div className="flex flex-col gap-[48.34px] w-full max-w-[89%] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 envelope-content">
+					<div className="flex flex-col gap-[32.23px] envelope-content-text">
+						<h6 className="font-semibold xl:text-7xl md:text-5xl text-2xl text-[#252525] text-center">
+							Be the first to <br /> experience Nectar
+						</h6>
+						<p className="xl:text-2xl md:text-xl text-base text-[#535353] text-center font-medium">
+							Join like-minded businesses waiting to unlock growth
+							with <br /> Nectar
+						</p>
+					</div>
+					<div
+						className="relative bg-white md:h-[52px] h-fit rounded-[18px] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314] w-full lg:max-w-[50%] max-w-[70%] mx-auto"
+						style={{
+							backdropFilter: "blur(40.283843994140625px)",
+							boxShadow:
+								"2.01px 2.01px 12.09px 0px #0000001F inset",
+						}}
+					>
+						<input
+							type="email"
+							className="text-black placeholder:text-[#535353] w-[calc(100%_-_170px)] outline-none bg-transparent"
+							placeholder="Enter your email"
+						/>
+						<FilledOrangeBtn
+							className="flex items-center rounded-2xl! whitespace-nowrap md:h-12! h-fit!"
+							style={{ padding: "12px 20px" }}
+						>
+							Join Waitlist
+						</FilledOrangeBtn>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

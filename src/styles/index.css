@@ -122,6 +122,10 @@ input[type="number"] {
 	scrollbar-width: none;
 }
 
+.envelope-section {
+	margin: 0 121px;
+}
+
 @media screen and (max-width: 1280px) {
 	.main-heading-top {
 		font-size: 2.7rem;
@@ -139,5 +143,85 @@ input[type="number"] {
 	.main-heading-bottom {
 		font-size: 2.5rem;
 		line-height: 3.818125rem;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.envelope-section {
+		margin: 0 75px;
+	}
+
+	.envelope-section h6 {
+		font-size: 40px;
+	}
+
+	.envelope-section p {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.envelope-section {
+		margin: 0 55px;
+	}
+
+	.envelope-section h6 {
+		font-size: 30px;
+	}
+
+	.envelope-section p {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.envelope-section {
+		margin: 0 20px;
+	}
+
+	.envelope-content,
+	.envelope-content-text {
+		gap: 20px;
+	}
+
+	.envelope-section h6 {
+		font-size: 25px;
+	}
+
+	.envelope-section p {
+		font-size: 14px;
+		width: 100%;
+		max-width: 60%;
+		margin: auto;
+	}
+
+	.envelope-section p br {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.envelope-content,
+	.envelope-content-text {
+		gap: 10px;
+	}
+
+	.envelope-section h6 {
+		font-size: 20px;
+	}
+
+	.envelope-section p {
+		font-size: 12px;
+		max-width: 70%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.envelope-section img {
+		display: none;
+	}
+
+	.envelope-content {
+		position: relative;
 	}
 }
