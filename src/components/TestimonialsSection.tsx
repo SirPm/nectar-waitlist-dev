@@ -29,8 +29,8 @@ const testimonials: Testimonial[] = [
 	},
 	{
 		id: 3,
-		name: "Victoria Ene Okere",
-		title: "CEO, Slate94 Productions",
+		name: "Chidiogo Egbuna",
+		title: "Co-Founder, Blue Confetti Experiential",
 		quote: "“The daily interest on our balances alone has covered many operational costs this quarter. I’m going to be on this app for a long time.”",
 		image: "/assets/victoria-okere.png",
 	},
