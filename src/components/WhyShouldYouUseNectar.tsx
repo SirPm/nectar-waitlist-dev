@@ -181,7 +181,7 @@ export const WhyShouldYouUseNectar = () => {
 			/>
 			<img
 				src="/assets/why-us-vector.svg"
-				alt=""
+				alt="why us vector"
 				className="absolute bottom-0 left-[50%] -translate-x-1/2 w-full max-w-[50%]"
 			/>
 
