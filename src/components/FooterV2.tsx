@@ -1,3 +1,4 @@
+import { SUBSTACK_LINK } from "../constants";
 import { FilledOrangeBtn } from "./styled";
 
 export const FooterV2 = () => {
@@ -33,7 +34,21 @@ export const FooterV2 = () => {
 							your business can actually use, straight into your
 							inbox.
 						</p>
-						<div className="relative bg-white h-[52px] rounded-[18px] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314]">
+						<div className="flex items-center justify-start">
+							<a
+								href={SUBSTACK_LINK}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FilledOrangeBtn
+									className="flex items-center rounded-2xl! whitespace-nowrap"
+									style={{ padding: "12px 20px" }}
+								>
+									Start Growing
+								</FilledOrangeBtn>
+							</a>
+						</div>
+						{/* <div className="relative bg-white h-[52px] rounded-[18px] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314]">
 							<input
 								type="email"
 								className="text-black placeholder:text-[#B2B0B0] w-[calc(100%_-_170px)] outline-none bg-transparent"
@@ -45,7 +60,7 @@ export const FooterV2 = () => {
 							>
 								Start Growing
 							</FilledOrangeBtn>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="flex flex-col gap-[72px] w-full md:max-w-[35%]">
@@ -141,6 +156,8 @@ export const FooterV2 = () => {
 									href={link}
 									key={index}
 									className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all rounded-[157.5px]"
+									target="_blank"
+									rel="noreferrer"
 								>
 									<img
 										src={`/assets/${label}-icon.svg`}

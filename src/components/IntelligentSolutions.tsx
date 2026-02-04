@@ -1,3 +1,4 @@
+import { SUBSTACK_LINK } from "../constants";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { FilledOrangeBtn } from "./styled";
 
@@ -24,9 +25,15 @@ export const IntelligentSolutions = () => {
 							your business.
 						</p>
 					</div>
-					<FilledOrangeBtn className="flex items-center">
-						Join Waitlist
-					</FilledOrangeBtn>
+					<a
+						href={SUBSTACK_LINK}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FilledOrangeBtn className="flex items-center">
+							Join Waitlist
+						</FilledOrangeBtn>
+					</a>
 				</div>
 			</div>
 			<div className="flex items-center gap-8 md:gap-5 flex-col md:flex-row justify-between">
