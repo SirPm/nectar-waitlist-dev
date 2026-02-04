@@ -40,6 +40,15 @@ body {
 		transform: translateX(-50%);
 	}
 }
+
+.animate-marquee {
+	animation: scroll 15s linear infinite;
+}
+
+.animate-marquee:hover {
+	animation-play-state: paused;
+}
+
 .app-container {
 	width: 100%;
 	max-width: 89.58%;
@@ -87,9 +96,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
 	box-shadow: 0 0 0px 1000px transparent inset !important;
-	-webkit-text-fill-color: #ffffff !important;
-	color: #ffffff !important;
-	caret-color: #ffffff !important;
+	-webkit-text-fill-color: #252525 !important;
+	color: #252525 !important;
+	caret-color: #252525 !important;
 	background-color: transparent !important;
 	transition: background-color 5000s ease-in-out 0s;
 }

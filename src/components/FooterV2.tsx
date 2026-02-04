@@ -124,9 +124,18 @@ export const FooterV2 = () => {
 									label: "whatsapp",
 									link: "#",
 								},
-								{ label: "linkedin", link: "#" },
-								{ label: "instagram", link: "#" },
-								{ label: "twitter", link: "#" },
+								{
+									label: "linkedin",
+									link: "https://www.linkedin.com/company/nectarng",
+								},
+								{
+									label: "instagram",
+									link: "https://www.instagram.com/try.nectarng?igsh=b2Q2dmFtYWhwcGpz&utm_source=qr",
+								},
+								{
+									label: "twitter",
+									link: "https://x.com/trynectar?s=21&t=z5xo2zd_apJcmCeshvaAyw",
+								},
 							].map(({ label, link }, index) => (
 								<a
 									href={link}
@@ -143,7 +152,7 @@ export const FooterV2 = () => {
 					</div>
 				</div>
 			</div>
-			<div className="border-t border-b border-l-0 border-r-0 border-[#FFFFFF80] border-[0.5px] flex items-center justify-center">
+			<div className="border-t border-b border-l-0 border-r-0 border-[#FFFFFF80] border-[0.1px] flex items-center justify-center">
 				<img
 					src="/assets/nectar-footer-logo.svg"
 					className="inline-block"
@@ -159,8 +168,9 @@ export const FooterV2 = () => {
 						Yours truly, Nectar
 					</span>
 					<img
-						src="/assets/nectar-footer-logo-sm.svg"
+						src="/assets/footer-logo-3.svg"
 						alt="nectar"
+						className="w-[14px] h-[18px]"
 					/>
 				</p>
 			</div>

@@ -1,16 +1,52 @@
 import styled from "@emotion/styled";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import ReactSelect, {
+	components,
+	type MultiValue,
+	type OptionProps,
+} from "react-select";
 import { REGEX_VALUES } from "../utils/regex";
 import { formatAmount } from "../utils/amount";
 import { FilledOrangeBtn } from "./styled";
+import { ContactFormSuccessView } from "./ContactFormSuccessView";
 // import { WaitlistHero } from "./WaitlistHero";
+
+interface FeatureOption {
+	value: string;
+	label: string;
+}
+
+const featureOptions: FeatureOption[] = [
+	{ value: "Business Loans", label: "Business Loans" },
+	{
+		value: "Interest on Account Balance",
+		label: "Interest on Account Balance",
+	},
+	{ value: "Bookkeeping", label: "Bookkeeping" },
+];
+
+const CheckboxOption = (props: OptionProps<FeatureOption, true>) => {
+	return (
+		<components.Option {...props}>
+			<div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+				<input
+					type="checkbox"
+					checked={props.isSelected}
+					onChange={() => null}
+					style={{ cursor: "pointer" }}
+				/>
+				<span>{props.label}</span>
+			</div>
+		</components.Option>
+	);
+};
 
 interface INotifyUsFormData {
 	businessName: string;
 	description: string;
 	amount: string;
 	email: string;
-	preferredFeatures: string;
+	preferredFeatures: string[];
 }
 
 const DEFAULT_FORM_DATA: INotifyUsFormData = {
@@ -18,12 +54,14 @@ const DEFAULT_FORM_DATA: INotifyUsFormData = {
 	description: "",
 	amount: "",
 	email: "",
-	preferredFeatures: "",
+	preferredFeatures: [],
 };
 
 export const GetNotified = () => {
 	const [formData, setFormData] =
 		useState<INotifyUsFormData>(DEFAULT_FORM_DATA);
+	const [isLoading, setIsLoading] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const isDisabled = useMemo(() => {
 		return (
@@ -56,9 +94,39 @@ export const GetNotified = () => {
 		});
 	};
 
-	const handleSubmit = () => {
-		console.log("Submit form data:", formData);
-	};
+	const handleSubmit = useCallback(async () => {
+		setIsLoading(true);
+		const formdata = new FormData();
+		formdata.append("Business Name", formData.businessName);
+		formdata.append("Nature of Business", formData.description);
+		formdata.append("Average Loan Amount", formData.amount);
+		formdata.append("Email Address", formData.email);
+		formdata.append("Feature", formData.preferredFeatures.join(", "));
+
+		const requestOptions: RequestInit = {
+			method: "POST",
+			body: formdata,
+			redirect: "follow" as RequestRedirect,
+		};
+
+		try {
+			const resp = await fetch(
+				"https://script.google.com/macros/s/AKfycbzLv1Dv1e_C451jguocS05MtLt4YkfzfSNZ5hZwsWr-IAcH0gG1_tbr_rrc6HH6_DoHbA/exec",
+				requestOptions,
+			);
+			await resp.json();
+
+			setIsLoading(false);
+			setFormData(DEFAULT_FORM_DATA);
+			setIsSubmitted(true);
+			setTimeout(() => {
+				setIsSubmitted(false);
+			}, 5000);
+		} catch (error) {
+			console.error(error);
+			setIsLoading(false);
+		}
+	}, [formData]);
 
 	return (
 		<div className="mt-[125px] flex flex-col gap-[145px]">
@@ -69,98 +137,164 @@ export const GetNotified = () => {
 						Go Live
 					</h3>
 					<p className="md:text-xl text-base leading-6 text-[#252525] text-center">
-						Receive instant notifications and stay ahead of the
-						curve— <br className="hidden md:block" />
-						don't miss out on exclusive access to our launch.
+						Join our waitlist for exclusive launch access
+						<br className="hidden md:block" />
+						and real-time updates.
 					</p>
 				</div>
 				<div className="border border-[#E7E7E7] rounded-3xl w-full max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto">
-					<div className="flex flex-col gap-6 w-full">
-						<InputWrapper>
-							<InputLabel htmlFor="businessName">
-								What is the name of your business?
-							</InputLabel>
-							<Input
-								type="text"
-								id="businessName"
-								name="businessName"
-								placeholder="Enter your business name"
-								onChange={handleInputChange}
-								value={formData.businessName}
-							/>
-						</InputWrapper>
-						<InputWrapper>
-							<InputLabel htmlFor="description">
-								What does your business need?
-							</InputLabel>
-							<TextArea
-								id="description"
-								name="description"
-								placeholder="Provide a short description of your business"
-								onChange={handleInputChange}
-								value={formData.description}
-							/>
-						</InputWrapper>
-						<SelectWrapper>
-							<SelectLabel htmlFor="features">
-								What feature are you looking forward to?
-							</SelectLabel>
-							<Select
-								id="features"
-								defaultValue=""
-								required
+					{isSubmitted ? (
+						<ContactFormSuccessView />
+					) : (
+						<>
+							<div className="flex flex-col gap-6 w-full">
+								<InputWrapper>
+									<InputLabel htmlFor="businessName">
+										What is the name of your business?
+									</InputLabel>
+									<Input
+										type="text"
+										id="businessName"
+										name="businessName"
+										placeholder="Enter your business name"
+										onChange={handleInputChange}
+										value={formData.businessName}
+										disabled={isLoading}
+									/>
+								</InputWrapper>
+								<InputWrapper>
+									<InputLabel htmlFor="description">
+										What does your business do?
+									</InputLabel>
+									<TextArea
+										id="description"
+										name="description"
+										placeholder="Provide a short description of your business"
+										onChange={handleInputChange}
+										value={formData.description}
+										disabled={isLoading}
+									/>
+								</InputWrapper>
+								<SelectWrapper>
+									<SelectLabel htmlFor="features">
+										What feature are you looking forward to?
+									</SelectLabel>
+									<ReactSelect
+										isMulti
+										options={featureOptions}
+										isDisabled={isLoading}
+										value={featureOptions.filter((opt) =>
+											formData.preferredFeatures.includes(
+												opt.value,
+											),
+										)}
+										onChange={(
+											selected: MultiValue<FeatureOption>,
+										) => {
+											setFormData({
+												...formData,
+												preferredFeatures: selected.map(
+													(opt) => opt.value,
+												),
+											});
+										}}
+										placeholder="Select your preferred features"
+										closeMenuOnSelect={false}
+										hideSelectedOptions={false}
+										components={{ Option: CheckboxOption }}
+										styles={{
+											control: (base) => ({
+												...base,
+												minHeight: "60px",
+												backgroundColor: "#fafafa",
+												border: "1px solid #e6571314",
+												borderRadius: "20px",
+												padding: "0 8px",
+												boxShadow: "none",
+												"&:hover": {
+													borderColor: "#e6571314",
+												},
+											}),
+											placeholder: (base) => ({
+												...base,
+												color: "#8e8e93",
+												fontWeight: 500,
+											}),
+											multiValue: (base) => ({
+												...base,
+												backgroundColor: "#E65713",
+												borderRadius: "12px",
+											}),
+											multiValueLabel: (base) => ({
+												...base,
+												color: "#fff",
+												fontWeight: 500,
+											}),
+											multiValueRemove: (base) => ({
+												...base,
+												color: "#fff",
+												"&:hover": {
+													backgroundColor: "#c44a0f",
+													color: "#fff",
+												},
+											}),
+											option: (base, state) => ({
+												...base,
+												backgroundColor: state.isFocused
+													? "#f5f5f5"
+													: "#fff",
+												color: "#000",
+												cursor: "pointer",
+											}),
+										}}
+									/>
+								</SelectWrapper>
+								<InputWrapper>
+									<InputLabel htmlFor="amount">
+										How much do you typically need in loans?
+									</InputLabel>
+									<Input
+										type="text"
+										id="amount"
+										name="amount"
+										placeholder="₦0.00"
+										onChange={handleAmountChange}
+										value={formData.amount}
+										disabled={isLoading}
+									/>
+								</InputWrapper>
+								<InputWrapper>
+									<InputLabel htmlFor="email">
+										What is your email address?
+									</InputLabel>
+									<Input
+										type="email"
+										id="email"
+										name="email"
+										placeholder="Enter your email address"
+										onChange={handleInputChange}
+										value={formData.email}
+										disabled={isLoading}
+									/>
+								</InputWrapper>
+							</div>
+							<FilledOrangeBtn
+								disabled={isLoading || isDisabled}
+								onClick={handleSubmit}
+								style={{
+									padding: "12px 20px",
+									borderRadius: "17px",
+									height: "48px",
+									boxShadow:
+										"0px 4px 4px 0px #FFFFFF40 inset",
+									width: "100%",
+								}}
+								className={`${isDisabled ? "cursor-not-allowed! opacity-30" : ""}`}
 							>
-								<option
-									value=""
-									disabled
-								>
-									Select your preferred features
-								</option>
-								<option value="feature1">Feature 1</option>
-								<option value="feature2">Feature 2</option>
-								<option value="feature3">Feature 3</option>
-							</Select>
-						</SelectWrapper>
-						<InputWrapper>
-							<InputLabel htmlFor="amount">
-								How much do you typically need in loans?
-							</InputLabel>
-							<Input
-								type="text"
-								id="amount"
-								name="amount"
-								placeholder="₦0.00"
-								onChange={handleAmountChange}
-								value={formData.amount}
-							/>
-						</InputWrapper>
-						<InputWrapper>
-							<InputLabel htmlFor="email">
-								What is your email address?
-							</InputLabel>
-							<Input
-								type="email"
-								id="email"
-								name="email"
-								placeholder="Enter your email address"
-								onChange={handleInputChange}
-								value={formData.email}
-							/>
-						</InputWrapper>
-					</div>
-					<FilledOrangeBtn
-						disabled={isDisabled}
-						onClick={isDisabled ? undefined : handleSubmit}
-						style={{
-							padding: "12px 20px",
-							borderRadius: "17px",
-							height: "48px",
-							boxShadow: "0px 4px 4px 0px #FFFFFF40 inset",
-							width: "100%",
-						}}
-					>
-						Submit form
-					</FilledOrangeBtn>
+								{isLoading ? "Loading..." : "Join Waitlist"}
+							</FilledOrangeBtn>
+						</>
+					)}
 				</div>
 			</div>
 			<div className="relative envelope-section">
@@ -196,7 +330,7 @@ export const GetNotified = () => {
 							className="flex items-center rounded-2xl! whitespace-nowrap md:h-12! h-fit!"
 							style={{ padding: "12px 20px" }}
 						>
-							Join Waitlist
+							Subscribe
 						</FilledOrangeBtn>
 					</div>
 				</div>
@@ -264,37 +398,4 @@ const SelectLabel = styled.label`
 	line-height: 1.375rem;
 	color: #000000;
 	font-weight: 500;
-`;
-
-const Select = styled.select`
-	height: 60px;
-	padding: 4px 12px;
-	background-color: #fafafa;
-	border: 1px solid #e6571314;
-	font-weight: 500;
-	font-size: 1rem;
-	color: #000000;
-	border-radius: 20px;
-	outline-style: none;
-	appearance: none;
-	background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 12px center;
-	background-size: 24px;
-	padding-right: 44px;
-	cursor: pointer;
-
-	&::-ms-expand {
-		display: none;
-	}
-
-	/* Placeholder-like styling for default option */
-	option[value=""][disabled] {
-		color: #8e8e93;
-	}
-
-	/* When no value is selected, show placeholder color */
-	&:invalid {
-		color: #8e8e93;
-	}
 `;

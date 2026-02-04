@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
 		id: 3,
 		name: "Chidiogo Egbuna",
 		title: "Co-Founder, Blue Confetti Experiential",
-		quote: "“The daily interest on our balances alone has covered many operational costs this quarter. I’m going to be on this app for a long time.”",
+		quote: "“The daily interest on our balances alone has covered many operational costs this quarter. I can't wait to see it publicly released.”",
 		image: "/assets/victoria-okere.png",
 	},
 ];
