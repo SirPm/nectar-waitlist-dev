@@ -143,10 +143,10 @@ export const FooterV2 = () => {
 					</div>
 				</div>
 			</div>
-			<div className="border-t border-b border-l-0 border-r-0 border-[#FFFFFF80] border-[0.5px]">
+			<div className="border-t border-b border-l-0 border-r-0 border-[#FFFFFF80] border-[0.5px] flex items-center justify-center">
 				<img
 					src="/assets/nectar-footer-logo.svg"
-					className="inline-block pl-[31px]"
+					className="inline-block"
 					alt="nectar"
 				/>
 			</div>
