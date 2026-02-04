@@ -29,6 +29,7 @@ export const IntelligentSolutions = () => {
 						href={SUBSTACK_LINK}
 						target="_blank"
 						rel="noopener noreferrer"
+						className="w-fit"
 					>
 						<FilledOrangeBtn className="flex items-center">
 							Join Waitlist
