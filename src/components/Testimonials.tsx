@@ -15,7 +15,7 @@ const TESTIMONIALS_DATA = [
 	"Building Materials",
 	"Real Estate",
 	"Travel & Tours",
-	"Hotels & Short-lets",
+	"Hotels & Shortlets",
 	"Restaurants & Catering",
 	"Private Schools",
 	"Healthcare Providers",
@@ -43,8 +43,8 @@ export const Testimonials = () => {
 					</p>
 				</div>
 				<div className="overflow-x-auto overflow-y-hidden scrollbar-hide">
-					<div className="flex items-center gap-6">
-						{TESTIMONIALS_DATA.map((item, index) => (
+					<div className="flex items-center gap-6 animate-marquee">
+						{[...TESTIMONIALS_DATA, ...TESTIMONIALS_DATA].map((item, index) => (
 							<div
 								key={index}
 								className="bg-[#FCFCFC] border border-[#E7E7E7] rounded-2xl h-6 whitespace-nowrap flex items-center justify-center p-6 flex-shrink-0"

@@ -47,7 +47,7 @@ export const AccordionFAQ = () => {
 					className={`bg-[#2C0C00] border border-[#8080808C] rounded-3xl overflow-hidden backdrop-blur-sm p-6 flex flex-col gap-5.5 ${openIndex === index ? "min-h-[104px]" : "h-[104px]"}`}
 				>
 					<div className="w-full flex items-center justify-between">
-						<span className="font-semibold text-xl text-white">
+						<span className="font-semibold text-2xl text-white">
 							{item.question}
 						</span>
 						<button
@@ -71,9 +71,7 @@ export const AccordionFAQ = () => {
 								: "max-h-0 opacity-0"
 						} overflow-hidden`}
 					>
-						<div className="font-medium text-xl text-white">
-							{item.answer}
-						</div>
+						<div className="text-xl text-white">{item.answer}</div>
 					</div>
 				</div>
 			))}

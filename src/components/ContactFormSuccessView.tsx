@@ -9,10 +9,10 @@ export const ContactFormSuccessView = () => {
 				/>
 			</div>
 			<div className="flex flex-col gap-2.5 items-center">
-				<h6 className="font-semibold text-[1.125rem] leading-[1.59375rem] text-white text-center">
+				<h6 className="font-semibold text-[1.125rem] leading-[1.59375rem] text-[#252525] text-center">
 					You are on the list! 🎉
 				</h6>
-				<p className="text-base  leading-[1.59375rem] text-[#FFFFFFE5] text-center">
+				<p className="text-base  leading-[1.59375rem] text-[#252525] text-center">
 					Thank you for signing up! You'll be the first to know when
 					we go live. Stay tuned for exciting updates.
 				</p>
