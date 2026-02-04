@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
+/* Update for mobile just do px-10 */
+
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Manrope", sans-serif;
-	background-image: url("/assets/bg.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -30,6 +31,24 @@ body {
 		}
 	}
 }
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.animate-marquee {
+	animation: scroll 15s linear infinite;
+}
+
+.animate-marquee:hover {
+	animation-play-state: paused;
+}
+
 .app-container {
 	width: 100%;
 	max-width: 89.58%;
@@ -77,9 +96,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
 	box-shadow: 0 0 0px 1000px transparent inset !important;
-	-webkit-text-fill-color: #ffffff !important;
-	color: #ffffff !important;
-	caret-color: #ffffff !important;
+	-webkit-text-fill-color: #252525 !important;
+	color: #252525 !important;
+	caret-color: #252525 !important;
 	background-color: transparent !important;
 	transition: background-color 5000s ease-in-out 0s;
 }
@@ -103,6 +122,19 @@ input[type="number"] {
 	appearance: textfield;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.envelope-section {
+	margin: 0 121px;
+}
+
 @media screen and (max-width: 1280px) {
 	.main-heading-top {
 		font-size: 2.7rem;
@@ -120,5 +152,85 @@ input[type="number"] {
 	.main-heading-bottom {
 		font-size: 2.5rem;
 		line-height: 3.818125rem;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.envelope-section {
+		margin: 0 75px;
+	}
+
+	.envelope-section h6 {
+		font-size: 40px;
+	}
+
+	.envelope-section p {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.envelope-section {
+		margin: 0 55px;
+	}
+
+	.envelope-section h6 {
+		font-size: 30px;
+	}
+
+	.envelope-section p {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.envelope-section {
+		margin: 0 20px;
+	}
+
+	.envelope-content,
+	.envelope-content-text {
+		gap: 20px;
+	}
+
+	.envelope-section h6 {
+		font-size: 25px;
+	}
+
+	.envelope-section p {
+		font-size: 14px;
+		width: 100%;
+		max-width: 60%;
+		margin: auto;
+	}
+
+	.envelope-section p br {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.envelope-content,
+	.envelope-content-text {
+		gap: 10px;
+	}
+
+	.envelope-section h6 {
+		font-size: 20px;
+	}
+
+	.envelope-section p {
+		font-size: 12px;
+		max-width: 70%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.envelope-section img {
+		display: none;
+	}
+
+	.envelope-content {
+		position: relative;
 	}
 }

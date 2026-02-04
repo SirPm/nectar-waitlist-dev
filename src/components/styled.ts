@@ -40,3 +40,12 @@ export const DynamicFilledWhiteBtn = styled(Btn)`
 		cursor: not-allowed;
 	}
 `;
+
+export const FilledOrangeBtn = styled(Btn)`
+	box-shadow: 0px 4px 4px 0px #ffffff40 inset;
+	padding: 12px 24px;
+	height: 48px;
+	background-color: #E65713;
+	color: #FFFFFF;
+	border-radius: 16px;
+`;
