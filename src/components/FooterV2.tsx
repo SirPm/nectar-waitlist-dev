@@ -141,6 +141,8 @@ export const FooterV2 = () => {
 									href={link}
 									key={index}
 									className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all rounded-[157.5px]"
+									target="_blank"
+									rel="noreferrer"
 								>
 									<img
 										src={`/assets/${label}-icon.svg`}
