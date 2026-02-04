@@ -9,6 +9,7 @@ import { REGEX_VALUES } from "../utils/regex";
 import { formatAmount } from "../utils/amount";
 import { FilledOrangeBtn } from "./styled";
 import { ContactFormSuccessView } from "./ContactFormSuccessView";
+import { SUBSTACK_LINK } from "../constants";
 // import { WaitlistHero } from "./WaitlistHero";
 
 interface FeatureOption {
@@ -313,7 +314,21 @@ export const GetNotified = () => {
 							with <br /> Nectar
 						</p>
 					</div>
-					<div
+					<div className="flex items-center justify-center">
+						<a
+							href={SUBSTACK_LINK}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<FilledOrangeBtn
+								className="flex items-center rounded-2xl! whitespace-nowrap md:h-12! h-fit!"
+								style={{ padding: "12px 20px" }}
+							>
+								Subscribe
+							</FilledOrangeBtn>
+						</a>
+					</div>
+					{/* <div
 						className="relative bg-white md:h-[52px] h-fit rounded-[18px] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314] w-full lg:max-w-[50%] max-w-[70%] mx-auto"
 						style={{
 							backdropFilter: "blur(40.283843994140625px)",
@@ -332,7 +347,7 @@ export const GetNotified = () => {
 						>
 							Subscribe
 						</FilledOrangeBtn>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

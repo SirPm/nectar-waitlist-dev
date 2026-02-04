@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import { FilledOrangeBtn } from "./styled";
+import { SUBSTACK_LINK } from "../constants";
 
 interface Testimonial {
 	id: number;
@@ -123,7 +124,21 @@ export const TestimonialsSection: React.FC = () => {
 						businesses.
 					</h2>
 
-					<div className="relative bg-[#FAFAFA] h-14 rounded-[1.25rem] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314]">
+					<div className="flex items-center justify-start">
+						<a
+							href={SUBSTACK_LINK}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<FilledOrangeBtn
+								className="flex items-center rounded-[1.0625rem]! whitespace-nowrap"
+								style={{ padding: "12px 20px" }}
+							>
+								Get Started Now
+							</FilledOrangeBtn>
+						</a>
+					</div>
+					{/* <div className="relative bg-[#FAFAFA] h-14 rounded-[1.25rem] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314]">
 						<input
 							type="email"
 							className="text-black placeholder:text-[#8E8E93] w-[calc(100%_-_170px)] outline-none bg-transparent"
@@ -135,7 +150,7 @@ export const TestimonialsSection: React.FC = () => {
 						>
 							Get Started Now
 						</FilledOrangeBtn>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

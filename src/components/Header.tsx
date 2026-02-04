@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FilledOrangeBtn, FilledWhiteBtn } from "./styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import { SUBSTACK_LINK } from "../constants";
 
 const LINKS: { name: string; url: string }[] = [
 	{ name: "Products", url: "#products" },
@@ -102,7 +103,11 @@ export const Header = () => {
 								);
 							})}
 						</div>
-						<a href="#contactUs">
+						<a
+							href={SUBSTACK_LINK}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<FilledOrangeBtn className="flex items-center gap-2">
 								Join Waitlist
 							</FilledOrangeBtn>
@@ -244,7 +249,7 @@ const MenuBtn = styled.button`
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
-	background-color: #E65713;
+	background-color: #e65713;
 	border: none;
 	border-radius: 50%;
 	padding: 8px;

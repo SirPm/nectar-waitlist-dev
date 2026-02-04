@@ -1,3 +1,4 @@
+import { SUBSTACK_LINK } from "../constants";
 import { FilledOrangeBtn } from "./styled";
 
 export const HeaderContent = () => {
@@ -17,16 +18,33 @@ export const HeaderContent = () => {
 					<br className="hidden lg:block" />
 					grow your business from day one
 				</p>
-				<div className="relative bg-[#18181880] h-14 rounded-[1.125rem] flex items-center justify-between p-1">
+				<div className="flex items-center justify-center">
+					<a
+						href={SUBSTACK_LINK}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FilledOrangeBtn className="flex items-center">
+							Join Waitlist
+						</FilledOrangeBtn>
+					</a>
+				</div>
+				{/* <div className="relative bg-[#18181880] h-14 rounded-[1.125rem] flex items-center justify-between p-1">
 					<input
 						type="email"
 						className="text-white placeholder:text-[#535353] pl-4 w-[calc(100%_-_160px)] outline-none"
 						placeholder="Enter your email"
 					/>
-					<FilledOrangeBtn className="flex items-center w-38!">
-						Join Waitlist
-					</FilledOrangeBtn>
-				</div>
+					<a
+						href={SUBSTACK_LINK}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FilledOrangeBtn className="flex items-center w-38!">
+							Join Waitlist
+						</FilledOrangeBtn>
+					</a>
+				</div> */}
 			</div>
 		</div>
 	);

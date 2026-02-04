@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React /* , { useState } */ from "react";
+import { SUBSTACK_LINK } from "../constants";
 
 interface WaitlistHeroProps {
 	onSubmit?: (email: string) => void;
 }
 
-export const WaitlistHero: React.FC<WaitlistHeroProps> = ({ onSubmit }) => {
-	const [email, setEmail] = useState("");
+export const WaitlistHero: React.FC<
+	WaitlistHeroProps
+> = (/* { onSubmit } */) => {
+	// const [email, setEmail] = useState("");
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		if (email && onSubmit) {
-			onSubmit(email);
-		}
-	};
+	// const handleSubmit = (e: React.FormEvent) => {
+	// 	e.preventDefault();
+	// 	if (email && onSubmit) {
+	// 		onSubmit(email);
+	// 	}
+	// };
 
 	return (
 		<div className="relative w-full min-h-screen bg-gray-50 flex items-center justify-center p-4 overflow-hidden">
@@ -77,8 +80,19 @@ export const WaitlistHero: React.FC<WaitlistHeroProps> = ({ onSubmit }) => {
 						Join like-minded businesses waiting to unlock growth
 						with Nectar
 					</p>
+					<div className="flex items-center justify-center">
+						<a
+							href={SUBSTACK_LINK}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<button className="px-10 py-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-r-full transition-colors text-base whitespace-nowrap">
+								Join Waitlist
+							</button>
+						</a>
+					</div>
 
-					<form
+					{/* <form
 						onSubmit={handleSubmit}
 						className="flex gap-0 max-w-2xl mx-auto shadow-md rounded-full"
 					>
@@ -96,7 +110,7 @@ export const WaitlistHero: React.FC<WaitlistHeroProps> = ({ onSubmit }) => {
 						>
 							Join Waitlist
 						</button>
-					</form>
+					</form> */}
 				</div>
 			</div>
 
