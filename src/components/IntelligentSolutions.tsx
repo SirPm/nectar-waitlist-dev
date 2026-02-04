@@ -29,8 +29,9 @@ export const IntelligentSolutions = () => {
 					</FilledOrangeBtn>
 				</div>
 			</div>
-			<div className="flex items-center gap-8 md:gap-5 flex-col md:flex-row">
-				<div>
+			<div className="flex items-center gap-8 md:gap-5 flex-col md:flex-row justify-between">
+				{/* xl:bg-[#FAFAFA] */}
+				<div className="w-full max-w-[32%] bg-[#FAFAFA]">
 					<img
 						src={
 							isMobile
@@ -41,7 +42,7 @@ export const IntelligentSolutions = () => {
 						alt=""
 					/>
 				</div>
-				<div className="flex flex-col gap-5">
+				<div className="flex flex-col gap-5 w-full max-w-[32%]">
 					<div className="bg-[#FAFAFA] rounded-[1.75rem] py-9.5 pl-8 flex flex-col gap-5.25">
 						<h4 className="text-[#1C0000A3] text-[2rem] leading-9 font-semibold">
 							It understands <br className="hidden md:block" />
@@ -57,10 +58,11 @@ export const IntelligentSolutions = () => {
 						<img
 							src="/assets/intelligent-solutions-ai-input.svg"
 							alt=""
+							className="w-full"
 						/>
 					</div>
 				</div>
-				<div>
+				<div className="w-full max-w-[32%] bg-[#FAFAFA]">
 					<img
 						src={
 							isMobile

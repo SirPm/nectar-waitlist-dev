@@ -47,9 +47,9 @@ export const Testimonials = () => {
 						{TESTIMONIALS_DATA.map((item, index) => (
 							<div
 								key={index}
-								className="bg-[#FCFCFC] border border-[#E7E7E7] rounded-3xl h-20.25 whitespace-nowrap flex items-center justify-center p-6 flex-shrink-0"
+								className="bg-[#FCFCFC] border border-[#E7E7E7] rounded-2xl h-6 whitespace-nowrap flex items-center justify-center p-6 flex-shrink-0"
 							>
-								<p className="text-2xl text-[#535353] font-bold">
+								<p className="text-base text-[#535353] font-bold">
 									{item}
 								</p>
 							</div>
