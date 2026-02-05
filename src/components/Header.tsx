@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
-import { FilledOrangeBtn, FilledWhiteBtn } from "./styled";
+import { FilledOrangeBtn/* , FilledWhiteBtn */ } from "./styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { SUBSTACK_LINK } from "../constants";
