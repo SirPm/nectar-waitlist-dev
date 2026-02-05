@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import { FilledOrangeBtn } from "./styled";
-import { SUBSTACK_LINK } from "../constants";
 
 interface Testimonial {
 	id: number;
@@ -125,11 +124,7 @@ export const TestimonialsSection: React.FC = () => {
 					</h2>
 
 					<div className="flex items-center justify-center md:justify-start">
-						<a
-							href={SUBSTACK_LINK}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
+						<a href="#waitListForm">
 							<FilledOrangeBtn
 								className="flex items-center rounded-[1.0625rem]! whitespace-nowrap"
 								style={{ padding: "12px 20px" }}

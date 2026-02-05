@@ -1,4 +1,3 @@
-import { SUBSTACK_LINK } from "../constants";
 import { FilledOrangeBtn } from "./styled";
 
 export const HeaderContent = () => {
@@ -19,11 +18,7 @@ export const HeaderContent = () => {
 					grow your business from day one
 				</p>
 				<div className="flex items-center justify-center">
-					<a
-						href={SUBSTACK_LINK}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<a href="#waitListForm">
 						<FilledOrangeBtn className="flex items-center">
 							Join Waitlist
 						</FilledOrangeBtn>

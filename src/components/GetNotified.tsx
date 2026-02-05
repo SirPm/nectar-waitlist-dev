@@ -143,7 +143,7 @@ export const GetNotified = () => {
 						and real-time updates.
 					</p>
 				</div>
-				<div className="border border-[#E7E7E7] rounded-3xl w-full max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto">
+				<div className="border border-[#E7E7E7] rounded-3xl w-full max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto scroll-mt-14" id="waitListForm">
 					{isSubmitted ? (
 						<ContactFormSuccessView />
 					) : (

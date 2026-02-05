@@ -1,4 +1,3 @@
-import { SUBSTACK_LINK } from "../constants";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { FilledOrangeBtn } from "./styled";
 
@@ -31,12 +30,7 @@ export const IntelligentSolutions = () => {
 						</p>
 					</div>
 
-					<a
-						href={SUBSTACK_LINK}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="w-fit"
-					>
+					<a href="#waitListForm">
 						<FilledOrangeBtn className="flex items-center">
 							Join Waitlist
 						</FilledOrangeBtn>
