@@ -145,7 +145,7 @@ export const Header = () => {
 							);
 						})}
 					</ol>
-					<MobileNavButton>
+					{/* <MobileNavButton>
 						<a href="#contactUs">
 							<FilledWhiteBtn className="flex items-center gap-2">
 								<span className="text-black font-medium">
@@ -154,7 +154,7 @@ export const Header = () => {
 								<img src="/assets/chevron-right.svg" />
 							</FilledWhiteBtn>
 						</a>
-					</MobileNavButton>
+					</MobileNavButton> */}
 				</MobileNavLinks>
 			</MobileNav>
 
@@ -227,9 +227,9 @@ const MobileNavItem = styled("li")`
 	justify-content: center;
 `;
 
-const MobileNavButton = styled("div")`
-	margin-top: 3rem;
-`;
+// const MobileNavButton = styled("div")`
+// 	margin-top: 3rem;
+// `;
 
 const Overlay = styled("div")<{ isOpen: boolean }>`
 	position: fixed;
