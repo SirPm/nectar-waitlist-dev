@@ -40,18 +40,18 @@ export const AccordionFAQ = () => {
 	};
 
 	return (
-		<div className="p-6 flex flex-col gap-[27px]">
+		<div className="p-0 md:p-6 flex flex-col gap-[27px]">
 			{faqData.map((item, index) => (
 				<div
 					key={index}
-					className={`bg-[#2C0C00] border border-[#8080808C] rounded-3xl overflow-hidden backdrop-blur-sm p-6 flex flex-col gap-5.5 ${openIndex === index ? "min-h-[104px]" : "h-[104px]"}`}
+					className={`bg-[#2C0C00] border border-[#8080808C] rounded-3xl overflow-hidden backdrop-blur-sm p-6 flex flex-col gap-5.5 ${openIndex === index ? "min-h-[104px]" : "h-fit md:min-h-[104px]"}`}
 				>
 					<div className="w-full flex items-center justify-between">
-						<span className="font-semibold text-2xl text-white">
+						<span className="font-semibold text-xl md:text-2xl text-white">
 							{item.question}
 						</span>
 						<button
-							className="flex-shrink-0 w-[68px] h-[56px] rounded-[100px] py-3 px-4.5 bg-[#0000000D] flex items-center justify-center transition-all cursor-pointer border border-[#8080808C]"
+							className="flex-shrink-0 w-[45px] md:w-[68px] h-[40px] md:h-[56px] rounded-[20px] md:rounded-[100px] py-[10px] md:py-3 px-[10px] md:px-4.5 bg-[#0000000D] flex items-center justify-center transition-all cursor-pointer border border-[#8080808C]"
 							onClick={() => toggleItem(index)}
 						>
 							<img
@@ -61,17 +61,18 @@ export const AccordionFAQ = () => {
 										: "/assets/plus-white.svg"
 								}
 								alt=""
+								className="w-[80%] md:w-full"
 							/>
 						</button>
 					</div>
 					<div
 						className={`transition-all duration-300 ease-in-out ${
 							openIndex === index
-								? "max-h-48 opacity-100"
-								: "max-h-0 opacity-0"
+								? "max-h-48 opacity-100 block"
+								: "max-h-0 opacity-0 hidden"
 						} overflow-hidden`}
 					>
-						<div className="text-xl text-white">{item.answer}</div>
+						<div className="text-base md:text-xl text-white">{item.answer}</div>
 					</div>
 				</div>
 			))}

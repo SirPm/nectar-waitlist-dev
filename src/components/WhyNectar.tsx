@@ -105,7 +105,7 @@ const features: IFeatures[] = [
 				alt=""
 			/>
 		),
-		title: "Transparent, Modern, Human",
+		title: "Transparent. Modern. Human.",
 		description:
 			"No hidden fees. No long queues. Just clear pricing, fast service, and a partner genuinely invested in your growth.",
 	},
@@ -170,9 +170,9 @@ export default function WhyNectar() {
 			// onMouseLeave={() => setIsPaused(false)}
 		>
 			<div className="relative z-10 max-w-6xl mx-auto">
-				<div className="flex items-start justify-between gap-[140px]">
+				<div className="flex items-start flex-col md:flex-row justify-between gap-8 md:gap-[140px]">
 					{/* Left side - Menu tabs */}
-					<div className="space-y-6 w-full max-w-[33%]">
+					<div className="space-y-6 w-full max-w-full md:max-w-[33%]">
 						{features.map((feature, index) => {
 							const isActive = index === activeIndex;
 
@@ -222,7 +222,8 @@ export default function WhyNectar() {
 					</div>
 
 					{/* Right side - Content card */}
-					<div className="lg:sticky lg:top-20 relative p-[26.49px] rounded-[26.49px] bg-gradient-to-br from-[#ffffff0d] to-[#0000004d] backdrop-blur-xl border border-[#ffffff1a] shadow-[inset_0_0_60px_rgba(0,0,0,0.3)] h-[calc(100vh-365px)] w-full max-w-[60%]">
+					<div className="lg:sticky lg:top-20 relative p-[26.49px] rounded-[26.49px] bg-gradient-to-br from-[#ffffff0d] to-[#0000004d] backdrop-blur-xl border border-[#ffffff1a] shadow-[inset_0_0_60px_rgba(0,0,0,0.3)] h-fit md:h-[400px]  w-full max-w-full md:max-w-[60%]">
+						{/* h-[calc(100vh-365px)] */}
 						{/* Vertical progress indicator on the right */}
 						{/* <div className="absolute right-0 top-6 bottom-6 w-[3px] bg-white/10 rounded-full overflow-hidden">
 							<div

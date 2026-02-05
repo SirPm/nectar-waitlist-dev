@@ -138,7 +138,7 @@ export const GetNotified = () => {
 						Go Live
 					</h3>
 					<p className="md:text-xl text-base leading-6 text-[#252525] text-center">
-						Join our waitlist for exclusive launch access
+						Join our waitlist for exclusive launch access&nbsp;
 						<br className="hidden md:block" />
 						and real-time updates.
 					</p>

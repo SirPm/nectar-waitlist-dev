@@ -27,13 +27,13 @@ export const EverythingYouNeedToThrive = () => {
 			<div className="flex flex-col gap-[6rem]">
 				<div className="flex flex-col gap-8 items-center">
 					<h3 className="text-[#1C0000] font-semibold text-2xl lg:text-[4.5rem] text-center lg:leading-18">
-						Everything you
+						Everything you&nbsp;
 						<br className="hidden lg:block" />
 						need to <span className="text-[#E65713]">thrive</span>
 					</h3>
 					<p className="text-[#545454] font-medium text-xl text-center">
 						Delivering growth tools to growing businesses of all
-						sizes, available on a
+						sizes, available on a&nbsp;
 						<br className="hidden lg:block" />
 						single mobile app
 					</p>

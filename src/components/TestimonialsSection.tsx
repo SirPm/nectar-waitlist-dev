@@ -124,7 +124,7 @@ export const TestimonialsSection: React.FC = () => {
 						businesses.
 					</h2>
 
-					<div className="flex items-center justify-start">
+					<div className="flex items-center justify-center md:justify-start">
 						<a
 							href={SUBSTACK_LINK}
 							target="_blank"
