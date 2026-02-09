@@ -5,7 +5,7 @@ export const WhyShouldYouUseNectar = () => {
 	return (
 		<div
 			id="whyUs"
-			className="bg-[#1C0000] h-screen relative pt-[59px] md:px-0 px-10"
+			className="bg-[#1C0000] min-h-screen relative pt-[59px] md:px-0 px-10"
 		>
 			<img
 				src="/assets/why-us-ellipse.svg"

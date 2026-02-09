@@ -1,4 +1,3 @@
-import { SUBSTACK_LINK } from "../constants";
 import { FilledOrangeBtn } from "./styled";
 
 export const FooterV2 = () => {
@@ -35,11 +34,7 @@ export const FooterV2 = () => {
 							inbox.
 						</p>
 						<div className="flex items-center justify-start">
-							<a
-								href={SUBSTACK_LINK}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
+							<a href="#waitListForm">
 								<FilledOrangeBtn
 									className="flex items-center rounded-2xl! whitespace-nowrap"
 									style={{ padding: "12px 20px" }}

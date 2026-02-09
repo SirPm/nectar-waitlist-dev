@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
-import { FilledOrangeBtn, FilledWhiteBtn } from "./styled";
+import { FilledOrangeBtn/* , FilledWhiteBtn */ } from "./styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
-import { SUBSTACK_LINK } from "../constants";
 
 const LINKS: { name: string; url: string }[] = [
 	{ name: "Products", url: "#products" },
@@ -103,11 +102,7 @@ export const Header = () => {
 								);
 							})}
 						</div>
-						<a
-							href={SUBSTACK_LINK}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
+						<a href="#waitListForm">
 							<FilledOrangeBtn className="flex items-center gap-2">
 								Join Waitlist
 							</FilledOrangeBtn>
@@ -145,7 +140,7 @@ export const Header = () => {
 							);
 						})}
 					</ol>
-					<MobileNavButton>
+					{/* <MobileNavButton>
 						<a href="#contactUs">
 							<FilledWhiteBtn className="flex items-center gap-2">
 								<span className="text-black font-medium">
@@ -154,7 +149,7 @@ export const Header = () => {
 								<img src="/assets/chevron-right.svg" />
 							</FilledWhiteBtn>
 						</a>
-					</MobileNavButton>
+					</MobileNavButton> */}
 				</MobileNavLinks>
 			</MobileNav>
 
@@ -173,6 +168,7 @@ const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	// position: fixed;
+	position: relative;
 	width: 100%;
 	// top: 0;
 	padding-top: 3.625rem;
@@ -227,9 +223,9 @@ const MobileNavItem = styled("li")`
 	justify-content: center;
 `;
 
-const MobileNavButton = styled("div")`
-	margin-top: 3rem;
-`;
+// const MobileNavButton = styled("div")`
+// 	margin-top: 3rem;
+// `;
 
 const Overlay = styled("div")<{ isOpen: boolean }>`
 	position: fixed;

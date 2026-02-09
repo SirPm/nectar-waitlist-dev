@@ -138,12 +138,12 @@ export const GetNotified = () => {
 						Go Live
 					</h3>
 					<p className="md:text-xl text-base leading-6 text-[#252525] text-center">
-						Join our waitlist for exclusive launch access
+						Join our waitlist for exclusive launch access&nbsp;
 						<br className="hidden md:block" />
 						and real-time updates.
 					</p>
 				</div>
-				<div className="border border-[#E7E7E7] rounded-3xl w-full max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto">
+				<div className="border border-[#E7E7E7] rounded-3xl w-full max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto scroll-mt-14" id="waitListForm">
 					{isSubmitted ? (
 						<ContactFormSuccessView />
 					) : (

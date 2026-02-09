@@ -33,7 +33,7 @@ export const Testimonials = () => {
 						Built for&nbsp;
 						<span className="text-[#E65713] inline-block mr-0.5 md:mr-0">
 							Businesses
-						</span>
+						</span>&nbsp;
 						<br className="hidden md:block" />
 						like yours.
 					</h4>
