@@ -39,10 +39,10 @@ export const Testimonials = () => {
 						like yours.
 					</h4>
 					<p className="text-[14px] leading-5 xl:text-xl md:leading-7 text-black font-medium md:text-left text-center">
-						If your business buys, sells, delivers,{" "}
-						<br className="hidden md:block" /> builds, or
+						If your business buys, sells, delivers,&nbsp;
+						<br className="hidden md:block" /> builds, or&nbsp;
 						<br className="block md:hidden" />
-						produces, Nectar helps you{" "}
+						produces, Nectar helps you&nbsp;
 						<br className="hidden md:block" /> grow from day one.
 					</p>
 				</div>
