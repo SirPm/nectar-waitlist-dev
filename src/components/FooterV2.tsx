@@ -1,5 +1,3 @@
-import { FilledOrangeBtn } from "./styled";
-
 export const FooterV2 = () => {
 	return (
 		<div
@@ -8,7 +6,7 @@ export const FooterV2 = () => {
 					"linear-gradient(248.97deg, #E55812 4.1%, #913407 76.82%)",
 			}}
 		>
-			<div className="py-[107px] md:px-[122px] px-10 flex justify-between md:flex-row flex-col md:gap-0 gap-[69px]">
+			<div className="py-[107px] md:px-[122px] px-[1.125rem] flex justify-between md:flex-row flex-col md:gap-0 gap-[69px]">
 				<div className="flex flex-col gap-[69px] w-full md:max-w-[49%]">
 					<div className="flex flex-col gap-6">
 						<div>
@@ -17,7 +15,7 @@ export const FooterV2 = () => {
 								alt="nectar logo"
 							/>
 						</div>
-						<p className="text-[#FFFFFFC2] font-medium text-base">
+						<p className="text-[#FFFFFFC2] font-medium text-sm leading-6 md:text-base">
 							Nectar is a digital banking platform provided in
 							partnership with licensed financial institutions in
 							Nigeria. All deposits are held with our partner
@@ -27,35 +25,55 @@ export const FooterV2 = () => {
 							license.
 						</p>
 					</div>
-					<div className="bg-[#FFFFFF1A] rounded-3xl py-8 px-6 flex flex-col gap-3">
-						<p className="font-medium text-sm text-white">
-							Sign up to receive stories, insights, and strategies
-							your business can actually use, straight into your
-							inbox.
-						</p>
-						<div className="flex items-center justify-start">
-							<a href="#waitListForm">
-								<FilledOrangeBtn
-									className="flex items-center rounded-2xl! whitespace-nowrap"
-									style={{ padding: "12px 20px" }}
-								>
-									Start Growing
-								</FilledOrangeBtn>
-							</a>
-						</div>
-						{/* <div className="relative bg-white h-[52px] rounded-[18px] flex items-center justify-between py-1 pr-1 pl-3 border border-[#E6571314]">
-							<input
-								type="email"
-								className="text-black placeholder:text-[#B2B0B0] w-[calc(100%_-_170px)] outline-none bg-transparent"
-								placeholder="Join other winning businesses"
-							/>
-							<FilledOrangeBtn
-								className="flex items-center rounded-2xl! whitespace-nowrap"
-								style={{ padding: "12px 20px" }}
+					<div className="flex flex-col gap-[25px]">
+						<h6 className="font-medium text-base text-[#FFFFFFC2]">
+							CONTACT
+						</h6>
+						<div className="flex flex-col gap-5">
+							<a
+								href="mailto:support@nectarng.com"
+								className="text-white text-base"
 							>
-								Start Growing
-							</FilledOrangeBtn>
-						</div> */}
+								support@nectarng.com
+							</a>
+							<p className="text-base font-medium text-white">
+								Plot 8, The Providence Street, Lekki Phase 1,
+								Lekki, Lagos State, Nigeria — 105102
+							</p>
+						</div>
+						<div className="grid grid-cols-2 justify-items-start md:flex items-center gap-[25.2px] w-full max-w-[60%] md:max-w-full">
+							{[
+								{
+									label: "youtube",
+									link: "https://youtube.com/@nectarng?feature=shared",
+								},
+								{
+									label: "linkedin",
+									link: "https://www.linkedin.com/company/nectarng",
+								},
+								{
+									label: "instagram",
+									link: "https://www.instagram.com/try.nectarng?igsh=b2Q2dmFtYWhwcGpz&utm_source=qr",
+								},
+								{
+									label: "twitter",
+									link: "https://x.com/trynectar?s=21&t=z5xo2zd_apJcmCeshvaAyw",
+								},
+							].map(({ label, link }, index) => (
+								<a
+									href={link}
+									key={index}
+									className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all rounded-[157.5px] w-fit"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<img
+										src={`/assets/${label}-icon.svg`}
+										alt={label}
+									/>
+								</a>
+							))}
+						</div>
 					</div>
 				</div>
 				<div className="flex flex-col gap-[72px] w-full md:max-w-[35%]">
@@ -111,56 +129,6 @@ export const FooterV2 = () => {
 								},
 							]}
 						/>
-					</div>
-					<div className="flex flex-col gap-[25px]">
-						<h6 className="font-medium text-base text-[#FFFFFFC2]">
-							CONTACT
-						</h6>
-						<div className="flex flex-col gap-5">
-							<a
-								href="mailto:support@nectarng.com"
-								className="text-white text-base"
-							>
-								support@nectarng.com
-							</a>
-							<p className="text-base font-medium text-white">
-								Plot 8, The Providence Street, Lekki Phase 1,
-								Lekki, Lagos State, Nigeria — 105102
-							</p>
-						</div>
-						<div className="flex items-center gap-[25.2px]">
-							{[
-								{
-									label: "whatsapp",
-									link: "#",
-								},
-								{
-									label: "linkedin",
-									link: "https://www.linkedin.com/company/nectarng",
-								},
-								{
-									label: "instagram",
-									link: "https://www.instagram.com/try.nectarng?igsh=b2Q2dmFtYWhwcGpz&utm_source=qr",
-								},
-								{
-									label: "twitter",
-									link: "https://x.com/trynectar?s=21&t=z5xo2zd_apJcmCeshvaAyw",
-								},
-							].map(({ label, link }, index) => (
-								<a
-									href={link}
-									key={index}
-									className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all rounded-[157.5px]"
-									target="_blank"
-									rel="noreferrer"
-								>
-									<img
-										src={`/assets/${label}-icon.svg`}
-										alt={label}
-									/>
-								</a>
-							))}
-						</div>
 					</div>
 				</div>
 			</div>

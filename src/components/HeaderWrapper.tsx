@@ -1,17 +1,20 @@
 import styled from "@emotion/styled";
 import { type PropsWithChildren } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export const HeaderWrapper = ({ children }: PropsWithChildren) => {
+	const isMobile = useMediaQuery("(max-width: 768px)");
+
 	return (
 		<Wrapper>
 			<>{children}</>
 			<img
-				src="/assets/header-footer-left.svg"
+				src={`/assets/header-footer-left${isMobile ? "-mobile" : ""}.svg`}
 				alt="footer left bars"
 				className="absolute left-0 bottom-0"
 			/>
 			<img
-				src="/assets/header-footer-right.svg"
+				src={`/assets/header-footer-right${isMobile ? "-mobile" : ""}.svg`}
 				alt="footer right bars"
 				className="absolute right-0 bottom-0"
 			/>

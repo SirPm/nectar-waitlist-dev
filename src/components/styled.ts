@@ -45,7 +45,13 @@ export const FilledOrangeBtn = styled(Btn)`
 	box-shadow: 0px 4px 4px 0px #ffffff40 inset;
 	padding: 12px 24px;
 	height: 48px;
-	background-color: #E65713;
-	color: #FFFFFF;
+	background-color: #e65713;
+	color: #ffffff;
 	border-radius: 16px;
+
+	@media screen and (max-width: 768px) {
+		height: 42px;
+		font-size: 14px;
+		line-height: 24px;
+	}
 `;

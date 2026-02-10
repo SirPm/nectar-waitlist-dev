@@ -130,20 +130,23 @@ export const GetNotified = () => {
 	}, [formData]);
 
 	return (
-		<div className="mt-[125px] flex flex-col gap-[145px]">
-			<div className="flex flex-col gap-[39px] md:mx-[122px] mx-10">
-				<div className="flex flex-col gap-[25px]">
-					<h3 className="font-semibold md:text-7xl text-5xl text-[#E65713] text-center">
-						Get Notified When <br className="hidden md:block" /> We
-						Go Live
+		<div className="mt-[83px] md:mt-[125px] flex flex-col gap-[145px]">
+			<div className="flex flex-col gap-[39px] md:mx-[122px] mx-[1.125rem]">
+				<div className="flex flex-col gap-2 md:gap-[25px]">
+					<h3 className="font-semibold md:text-7xl text-[28px] text-[#E65713] text-center">
+						Get Notified <br className="hidden md:block" /> When{" "}
+						<br className="block md:hidden" /> We Go Launch
 					</h3>
-					<p className="md:text-xl text-base leading-6 text-[#252525] text-center">
-						Join our waitlist for exclusive launch access&nbsp;
-						<br className="hidden md:block" />
-						and real-time updates.
+					<p className="md:text-xl w-full max-w-[361px] md:max-w-[500px] mx-auto text-sm leading-5 md:leading-6 text-[#252525] text-center">
+						We’re in a closed pilot for now. Leave your details
+						below to be first to know when we launch, and enjoy
+						lifelong early-user benefits.
 					</p>
 				</div>
-				<div className="border border-[#E7E7E7] rounded-3xl w-full max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto scroll-mt-14" id="waitListForm">
+				<div
+					className="border border-[#E7E7E7] rounded-3xl w-full md:max-w-[528px] p-6 gap-8 flex flex-col items-center mx-auto scroll-mt-14"
+					id="waitListForm"
+				>
 					{isSubmitted ? (
 						<ContactFormSuccessView />
 					) : (
@@ -304,14 +307,14 @@ export const GetNotified = () => {
 					alt=""
 					className="w-full max-w-full xl:max-w-[80%] mx-auto"
 				/>
-				<div className="flex flex-col gap-[48.34px] w-full max-w-[89%] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 envelope-content">
-					<div className="flex flex-col gap-[32.23px] envelope-content-text">
-						<h6 className="font-semibold xl:text-7xl md:text-5xl text-2xl text-[#252525] text-center">
-							Be the first to <br /> experience Nectar
+				<div className="flex flex-col gap-[14.27px] md:gap-[48.34px] w-full max-w-[89%] absolute md:top-[50%] top-0 left-[50%] -translate-x-1/2 md:-translate-y-1/2 envelope-content">
+					<div className="flex flex-col gap-[9.51px] md:gap-[32.23px] envelope-content-text">
+						<h6 className="font-semibold xl:text-7xl md:text-5xl text-[21.82px] text-[#252525] text-center">
+							Stay in the loop
 						</h6>
-						<p className="xl:text-2xl md:text-xl text-base text-[#535353] text-center font-medium">
-							Join like-minded businesses waiting to unlock growth
-							with <br /> Nectar
+						<p className="xl:text-2xl md:text-xl text-[12.73px] text-[#535353] text-center mx-auto font-medium w-full md:max-w-full max-w-[202.13px]">
+							Subscribe to our newsletter to <br /> get resources,
+							updates, and <br /> insights straight to your inbox
 						</p>
 					</div>
 					<div className="flex items-center justify-center">
@@ -320,10 +323,7 @@ export const GetNotified = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<FilledOrangeBtn
-								className="flex items-center rounded-2xl! whitespace-nowrap md:h-12! h-fit!"
-								style={{ padding: "12px 20px" }}
-							>
+							<FilledOrangeBtn className="flex items-center md:rounded-xl! rounded-[7.27px]! whitespace-nowrap md:h-12! h-[38.18px]! md:px-5! md:py-3! py-[10.91px]! px-[18.18px]! md:text-base text-sm!">
 								Subscribe
 							</FilledOrangeBtn>
 						</a>

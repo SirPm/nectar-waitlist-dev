@@ -3,23 +3,27 @@ import { FilledOrangeBtn } from "./styled";
 export const HeaderContent = () => {
 	return (
 		<div
-			className="h-[calc(100vh_-_173px)] flex justify-center items-center relative z-10 scroll-mt-6"
+			className="h-[calc(100vh_-_173px)] flex justify-center md:items-center relative z-10 scroll-mt-6 md:mt-0 mt-[5.39125rem]"
 			id="contactUs"
 		>
-			<div className="text-white w-full max-w-[90%] sm:max-w-[70%] md:max-w-[50%] lg:max-w-[60%] xl:max-w-[50%] mx-auto flex flex-col gap-3 lg:gap-6">
-				<h1 className="font-bold text-2xl sm:text-5xl lg:text-[4.5rem] text-center lg:leading-18">
+			<div className="text-white w-full max-w-full md:max-w-[50%] lg:max-w-[60%] xl:max-w-[50%] mx-[1.125rem] md:mx-auto flex flex-col gap-3 lg:gap-6">
+				<h1 className="font-bold text-[2rem] leading-10 md:text-5xl lg:text-[4.5rem] text-center lg:leading-18">
 					Hello Business,
 					<br />
 					Meet Growth
 				</h1>
-				<p className="text-base sm:text-[18px] lg:text-xl font-medium text-center">
-					Modern business banking tools with AI, designed to
-					<br className="hidden lg:block" />&nbsp;
-					grow your business from day one
+				<p className="text-base md:text-[18px] lg:text-xl font-medium text-center">
+					Modern business banking tools with AI,&nbsp;
+					<br className="block md:hidden" /> designed to grow
+					<br className="hidden lg:block" />
+					&nbsp; your business from day one
 				</p>
-				<div className="flex items-center justify-center">
-					<a href="#waitListForm">
-						<FilledOrangeBtn className="flex items-center">
+				<div className="flex items-center justify-center md:mt-0 mt-6">
+					<a
+						href="#waitListForm"
+						className="w-fit sm:w-[13.375rem] md:w-fit"
+					>
+						<FilledOrangeBtn className="flex items-center w-full! justify-center!">
 							Join Waitlist
 						</FilledOrangeBtn>
 					</a>

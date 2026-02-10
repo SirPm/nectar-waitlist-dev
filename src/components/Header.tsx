@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Link, useLocation } from "react-router-dom";
-import { FilledOrangeBtn/* , FilledWhiteBtn */ } from "./styled";
+import { FilledOrangeBtn /* , FilledWhiteBtn */ } from "./styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
@@ -17,9 +17,9 @@ export const Header = () => {
 	const isMobile = useMediaQuery("(max-width: 768px)");
 	const { hash } = useLocation();
 
-	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
-	};
+	// const toggleMenu = () => {
+	// 	setIsMenuOpen(!isMenuOpen);
+	// };
 
 	const closeMenu = () => {
 		setIsMenuOpen(false);
@@ -65,7 +65,8 @@ export const Header = () => {
 					</Link>
 				</LogoWrapper>
 				{isMobile ? (
-					<MenuBtn
+					<>
+						{/* <MenuBtn
 						onClick={toggleMenu}
 						aria-label="Menu"
 					>
@@ -73,7 +74,8 @@ export const Header = () => {
 							src="/assets/menu.svg"
 							alt="menu icon"
 						/>
-					</MenuBtn>
+					</MenuBtn> */}
+					</>
 				) : (
 					<>
 						<div className="flex items-center gap-10 bg-[#FFFFFF1F] py-3 px-6 h-11.5 rounded-[6.25rem]">
@@ -173,6 +175,10 @@ const Wrapper = styled.div`
 	// top: 0;
 	padding-top: 3.625rem;
 	z-index: 100;
+
+	@media screen and (max-width: 768px) {
+		padding-top: 1.84375rem;
+	}
 `;
 
 const LogoWrapper = styled.div`
@@ -240,20 +246,20 @@ const Overlay = styled("div")<{ isOpen: boolean }>`
 	display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
-const MenuBtn = styled.button`
-	display: none;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	background-color: #e65713;
-	border: none;
-	border-radius: 50%;
-	padding: 8px;
+// const MenuBtn = styled.button`
+// 	display: none;
+// 	width: 40px;
+// 	height: 40px;
+// 	cursor: pointer;
+// 	background-color: #e65713;
+// 	border: none;
+// 	border-radius: 50%;
+// 	padding: 8px;
 
-	@media screen and (max-width: 768px) {
-		display: block;
-		position: fixed;
-		right: 5.21%;
-		z-index: 25;
-	}
-`;
+// 	@media screen and (max-width: 768px) {
+// 		display: block;
+// 		position: fixed;
+// 		right: 5.21%;
+// 		z-index: 25;
+// 	}
+// `;

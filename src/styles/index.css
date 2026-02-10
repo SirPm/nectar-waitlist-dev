@@ -25,11 +25,11 @@ body {
 		scroll-behavior: smooth;
 	}
 
-	@media (max-width: 768px) {
+	/* @media (max-width: 768px) {
 		html {
-			font-size: 87.5%; /* 1rem = 14px */
+			font-size: 87.5%; //  1rem = 14px
 		}
-	}
+	} */
 }
 
 @keyframes scroll {
@@ -171,7 +171,11 @@ input[type="number"] {
 
 @media screen and (max-width: 768px) {
 	.envelope-section {
-		margin: 0 55px;
+		margin: 0 1.125rem;
+	}
+
+	.envelope-content {
+		transform: translateY(80%);
 	}
 
 	.envelope-section h6 {
@@ -181,11 +185,16 @@ input[type="number"] {
 	.envelope-section p {
 		font-size: 14px;
 	}
+
+	.app-container {
+		max-width: 100%;
+		margin: 0 1.125rem;
+	}
 }
 
 @media screen and (max-width: 650px) {
 	.envelope-section {
-		margin: 0 20px;
+		margin: 0 18px;
 	}
 
 	.envelope-content,
@@ -226,11 +235,7 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 400px) {
-	.envelope-section img {
-		display: none;
-	}
-
 	.envelope-content {
-		position: relative;
+		transform: translateY(25%);
 	}
 }

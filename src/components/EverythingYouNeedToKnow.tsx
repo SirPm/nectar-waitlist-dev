@@ -12,14 +12,13 @@ export const EverythingYouNeedToKnow = () => {
 				alt=""
 			/>
 			<div className="flex flex-col gap-8">
-				<h3 className="font-semibold lg:text-7xl text-5xl text-white text-center">
-					Everything you <br className="hidden lg:block" /> need
-					to&nbsp;
-					<span className="text-[#E65713]">know</span>
+				<h3 className="font-semibold md:text-[64px] md:leading-20 text-[28px] leading-9 text-white text-center">
+					You have questions? <br /> we have&nbsp;
+					<span className="text-[#E65713]">answers</span>
 				</h3>
-				<p className="text-center font-medium text-xl text-white">
+				{/* <p className="text-center font-medium text-xl text-white">
 					Get answers to common questions about Nectar
-				</p>
+				</p> */}
 			</div>
 			<AccordionFAQ />
 		</div>

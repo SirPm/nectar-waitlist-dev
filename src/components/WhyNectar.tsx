@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 interface IFeatures {
 	id: string;
@@ -114,6 +115,7 @@ const features: IFeatures[] = [
 const ROTATION_INTERVAL = 5000; // 5 seconds per tab
 
 export default function WhyNectar() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [progress, setProgress] = useState(0);
 	// const [isPaused, setIsPaused] = useState(false);
@@ -170,7 +172,7 @@ export default function WhyNectar() {
 			// onMouseLeave={() => setIsPaused(false)}
 		>
 			<div className="relative z-10 max-w-6xl mx-auto">
-				<div className="flex items-start flex-col md:flex-row justify-between gap-8 md:gap-[140px]">
+				<div className="flex items-start flex-col-reverse md:flex-row justify-between gap-8 md:gap-[140px]">
 					{/* Left side - Menu tabs */}
 					<div className="space-y-6 w-full max-w-full md:max-w-[33%]">
 						{features.map((feature, index) => {
@@ -181,24 +183,28 @@ export default function WhyNectar() {
 									key={feature.id}
 									onClick={() => handleTabClick(index)}
 									className={`relative w-full flex items-center gap-2 px-4 py-3 rounded-full text-left transition-all duration-300 overflow-hidden outline-none h-12 ${
-										isActive
+										isActive && !isMobile
 											? "text-white"
 											: "bg-white/[0.06] backdrop-blur-md text-white/90 hover:bg-white/[0.1] border border-white/[0.1] cursor-pointer"
 									}`}
 								>
-									{/* Base orange gradient for active tab */}
-									{isActive && (
-										<div className="absolute inset-0 bg-gradient-to-r from-[#7a3a15] to-[#913407]" />
-									)}
+									{!isMobile && (
+										<>
+											{/* Base orange gradient for active tab */}
+											{isActive && (
+												<div className="absolute inset-0 bg-gradient-to-r from-[#7a3a15] to-[#913407]" />
+											)}
 
-									{/* Dark overlay that fills from left, covering the orange as progress increases */}
-									{isActive && (
-										<div
-											className="absolute inset-0 bg-[#4a2510] origin-left transition-transform duration-75 ease-linear"
-											style={{
-												transform: `scaleX(${progress / 100})`,
-											}}
-										/>
+											{/* Dark overlay that fills from left, covering the orange as progress increases */}
+											{isActive && (
+												<div
+													className="absolute inset-0 bg-[#4a2510] origin-left transition-transform duration-75 ease-linear"
+													style={{
+														transform: `scaleX(${progress / 100})`,
+													}}
+												/>
+											)}
+										</>
 									)}
 
 									{/* Menu Icon container */}
@@ -222,7 +228,9 @@ export default function WhyNectar() {
 					</div>
 
 					{/* Right side - Content card */}
-					<div className="lg:sticky lg:top-20 relative p-[26.49px] rounded-[26.49px] bg-gradient-to-br from-[#ffffff0d] to-[#0000004d] backdrop-blur-xl border border-[#ffffff1a] shadow-[inset_0_0_60px_rgba(0,0,0,0.3)] h-fit md:h-[400px]  w-full max-w-full md:max-w-[60%]">
+					<div
+						className={`lg:sticky lg:top-0 relative overflow-hidden p-[26.49px] rounded-[26.49px] transition-all duration-300 ${isMobile ? "bg-white/20" : "bg-gradient-to-br from-[#ffffff0d] to-[#0000004d] backdrop-blur-xl border border-[#ffffff1a] shadow-[inset_0_0_60px_rgba(0,0,0,0.3)]"} h-fit  w-full max-w-full md:max-w-[60%]`}
+					>
 						{/* h-[calc(100vh-365px)] */}
 						{/* Vertical progress indicator on the right */}
 						{/* <div className="absolute right-0 top-6 bottom-6 w-[3px] bg-white/10 rounded-full overflow-hidden">
@@ -232,8 +240,23 @@ export default function WhyNectar() {
 							/>
 						</div> */}
 
+						{isMobile && (
+							<>
+								{/* Base orange gradient for active tab */}
+								<div className="absolute inset-0 bg-gradient-to-r from-[#7a3a15] to-[#913407] rounded-[26.49px]" />
+
+								{/* Dark overlay that fills from left, covering the orange as progress increases */}
+								<div
+									className="absolute inset-0 bg-[#4a2510] origin-left transition-transform duration-75 ease-linear"
+									style={{
+										transform: `scaleX(${progress / 100})`,
+									}}
+								/>
+							</>
+						)}
+
 						{/* Content */}
-						<div className="pr-6">
+						<div className="pr-6 relative z-10">
 							{/* Icon and title */}
 							<div className="flex items-center gap-4 mb-[26px]">
 								<span className="w-[41px] h-[41px] flex items-center justify-center shrink-0">
