@@ -45,7 +45,7 @@ export const FooterV2 = () => {
 							{[
 								{
 									label: "youtube",
-									link: "https://youtube.com/@nectarng?feature=shared",
+									link: "https://www.youtube.com/@gowithnectar",
 								},
 								{
 									label: "linkedin",
