@@ -47,7 +47,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
 	return (
 		<div
-			className={`flex gap-[17.57px] transition-all duration-500 border min-h-[178.63px] py-[14.06px] px-[11.71px] rounded-[18.74px] shadow-lg ${
+			className={`flex gap-[17.57px] transition-all duration-500 border min-h-[142.05px] md:min-h-[178.63px] py-3 px-3 md:py-[14.06px] md:px-[11.71px] rounded-[18.74px] shadow-lg ${
 				isActive
 					? "bg-white border-[#E7E7E799] opacity-100 scale-100 z-10"
 					: "opacity-30 border-[#E7E7E7] bg-[#FAFAFA] scale-95 z-0"
@@ -57,18 +57,18 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 				<img
 					src={testimonial.image}
 					alt={testimonial.name}
-					className="w-[9.4075rem] h-[9.4075rem] rounded-[18.74px] object-cover"
+					className="w-[118.05px] md:w-[9.4075rem] h-[118.05px] md:h-[9.4075rem] rounded-[18.74px] object-cover"
 				/>
 			</div>
 			<div className="flex-1 flex flex-col gap-[18.16px]">
-				<p className="text-base font-medium text-[#000000CC]">
+				<p className="text-xs md:text-base font-medium text-[#000000CC]">
 					{testimonial.quote}
 				</p>
 				<div className="flex flex-col gap-[4.69px]">
-					<p className="font-medium text-sm text-black">
+					<p className="font-medium text-[10px] md:text-sm text-black">
 						{testimonial.name}
 					</p>
-					<p className="text-[#00000099] text-xs">
+					<p className="text-[#00000099] text-[10px] md:text-xs">
 						{testimonial.title}
 					</p>
 				</div>
@@ -79,7 +79,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
 export const TestimonialsSection: React.FC = () => {
 	return (
-		<div className="bg-white pb-[7.8125rem] px-10 md:px-[7.5rem] flex items-center justify-center">
+		<div className="bg-white pb-[100px] md:pb-[7.8125rem] px-[1.125rem] md:px-[7.5rem] flex items-center justify-center">
 			<div className="max-w-6xl w-full flex items-center justify-between gap-[3.25rem] lg:flex-row flex-col-reverse">
 				{/* Left side - Swiper testimonials */}
 				<div className="flex-1 relative">
@@ -94,7 +94,7 @@ export const TestimonialsSection: React.FC = () => {
 						}}
 						modules={[Mousewheel]}
 						initialSlide={1}
-						className="lg:h-[620px] h-[590px]"
+						className="lg:h-[620px] md:h-[590px] h-[350px]"
 						slideToClickedSlide={true}
 					>
 						{testimonials.map((testimonial) => (
@@ -115,12 +115,11 @@ export const TestimonialsSection: React.FC = () => {
 
 				{/* Right side - CTA */}
 				<div className="flex-1 flex flex-col justify-center gap-6">
-					<h2 className="text-[2rem] font-bold leading-tight md:text-left text-center">
+					<h2 className="text-2xl md:text-[2rem] font-bold leading-tight md:text-left text-center">
 						Trusted by&nbsp;
 						<span className="text-[#E65713]">Entrepreneurs</span>
 						&nbsp;
-						<br className="hidden xs:block" /> building real
-						businesses.
+						<br /> building real businesses.
 					</h2>
 
 					<div className="flex items-center justify-center md:justify-start">

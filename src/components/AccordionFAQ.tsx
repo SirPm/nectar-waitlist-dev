@@ -44,14 +44,14 @@ export const AccordionFAQ = () => {
 			{faqData.map((item, index) => (
 				<div
 					key={index}
-					className={`bg-[#2C0C00] border border-[#8080808C] rounded-3xl overflow-hidden backdrop-blur-sm p-6 flex flex-col gap-5.5 ${openIndex === index ? "min-h-[104px]" : "h-fit md:min-h-[104px]"}`}
+					className={`bg-[#2C0C00] border border-[#8080808C] rounded-3xl overflow-hidden backdrop-blur-sm py-[16.41px] px-[18px] md:py-6 md:px-6 flex flex-col gap-2 md:gap-5.5 ${openIndex === index ? "h-fit md:min-h-[104px]" : "h-fit md:min-h-[104px]"}`}
 				>
 					<div className="w-full flex items-center justify-between">
-						<span className="font-semibold text-xl md:text-2xl text-white">
+						<span className="font-semibold text-sm md:text-2xl text-white">
 							{item.question}
 						</span>
 						<button
-							className="flex-shrink-0 w-[45px] md:w-[68px] h-[40px] md:h-[56px] rounded-[20px] md:rounded-[100px] py-[10px] md:py-3 px-[10px] md:px-4.5 bg-[#0000000D] flex items-center justify-center transition-all cursor-pointer border border-[#8080808C]"
+							className="flex-shrink-0 w-[35px] md:w-[68px] h-[28.82px] md:h-[56px] rounded-[51.47px] md:rounded-[100px] py-[6.18px] md:py-3 px-[9.26px] md:px-4.5 bg-[#0000000D] flex items-center justify-center transition-all cursor-pointer border border-[#8080808C]"
 							onClick={() => toggleItem(index)}
 						>
 							<img
@@ -70,9 +70,11 @@ export const AccordionFAQ = () => {
 							openIndex === index
 								? "max-h-48 opacity-100 block"
 								: "max-h-0 opacity-0 hidden"
-						} overflow-hidden`}
+						} overflow-hidden mr-14`}
 					>
-						<div className="text-base md:text-xl text-white">{item.answer}</div>
+						<div className="text-xs font-medium md:text-xl text-white">
+							{item.answer}
+						</div>
 					</div>
 				</div>
 			))}
